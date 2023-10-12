@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/DogAdoptionSystem.iml" filepath="$PROJECT_DIR$/.idea/DogAdoptionSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/dogadoption/dogadoption.iml" filepath="$PROJECT_DIR$/backend/dogadoption/dogadoption.iml" />
     </modules>
   </component>
 </project>
