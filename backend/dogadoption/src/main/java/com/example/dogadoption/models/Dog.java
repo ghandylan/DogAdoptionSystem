@@ -7,6 +7,7 @@ import java.util.Objects;
 public class Dog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    // you can exclude id from post method because it is auto-generated
     private long id;
 
     // TODO: Determine how to store images in database
