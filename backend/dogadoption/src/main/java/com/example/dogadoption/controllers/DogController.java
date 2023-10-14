@@ -15,27 +15,27 @@ public class DogController {
         this.dogService = dogService;
     }
 
-    @GetMapping("show-dogs")
+    @GetMapping("dogs")
     public List<Dog> getAllDogs() {
         return dogService.getAllDogs();
     }
 
-    @GetMapping("find-dog/{id}")
+    @GetMapping("dog/{id}")
     public Dog getDogById(@PathVariable Long id) {
         return dogService.getDogById(id).orElse(null);
     }
 
-    @PostMapping("add-dog")
+    @PostMapping("dog")
     public Dog addDog(@RequestBody Dog dog) {
         return dogService.addDog(dog);
     }
 
-    @PutMapping("update-dog/{id}")
+    @PutMapping("dog/{id}")
     public Dog updateDog(@PathVariable Long id, @RequestBody Dog dog) {
         return dogService.updateDog(id, dog);
     }
 
-    @DeleteMapping("delete-dog/{id}")
+    @DeleteMapping("dog/{id}")
     public void deleteDogById(@PathVariable Long id) {
         dogService.deleteDogById(id);
     }
