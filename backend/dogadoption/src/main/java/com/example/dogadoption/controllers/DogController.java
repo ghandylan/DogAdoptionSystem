@@ -1,7 +1,9 @@
 package com.example.dogadoption.controllers;
 
 import com.example.dogadoption.models.Dog;
+import com.example.dogadoption.models.Vet;
 import com.example.dogadoption.services.DogService;
+import com.example.dogadoption.services.VetService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,11 +12,9 @@ import java.util.List;
 @RestController
 public class DogController {
     public final DogService dogService;
-
-    public DogController(DogService dogService) {
+    public DogController(DogService dogService, VetService vetService) {
         this.dogService = dogService;
     }
-
     @GetMapping("dogs")
     public List<Dog> getAllDogs() {
         return dogService.getAllDogs();
@@ -25,7 +25,7 @@ public class DogController {
         return dogService.getDogById(id).orElse(null);
     }
 
-    @PostMapping("dog")
+    @RequestMapping(value = "/dog")
     public Dog addDog(@RequestBody Dog dog) {
         return dogService.addDog(dog);
     }
