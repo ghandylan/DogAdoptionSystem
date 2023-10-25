@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class = "header">
+            <img class = "headerbg" alt = "Header Background Image" src = "assets/tilesbg.png">
+            <img class = "fulllogo" alt = "Logo" src = "assets/fulllogo.png">
+            <div class = "headertitlecont">
+                <h1 class = "headertitle">Dog Record</h1>
+            </div>
+            <ul class="hList">
+                <li>
+                  <a href="#click" class="menu">
+                    <img class="menu-title" alt = "Menu Icon" src = "assets/menu.png">
+                    <ul class="menu-dropdown">
+                      <li>View All</li>
+                      <li>Profile</li>
+                      <li>Log Out</li>
+                    </ul>
+                  </a>
+                </li>
+            </ul>
+        </div>
+        <div class = "headerseperator"><br></div>
+
+        <div class = "flex vw100">
+            <div class = "user">
+                <div class = "usercont">
+                    <div class = "centeredflex">
+                        <img class = "userimg" alt = "User Image" src = "assets/user.png"/>
+                    </div>
+                    <h2 class = "userfullname">[[fnamewow]] [[initial]]. [[lname]]</h2>
+                    <div class = "userinfocont">
+                        <div class = "alignedflex vw50">
+                            <img class = "labelimg" alt = "Sex Icon" src = "assets/accountlbl1.png"/>
+                            <h2 class = "userlabel">Birthdate</h2>
+                        </div>
+                        <h2 class = "userinfo vw50 right">[[birthdate]]</h2>
+                    </div>
+                    <div class = "userinfocont">
+                        <div class = "alignedflex vw50">
+                            <img class = "labelimg" alt = "Sex Icon" src = "assets/accountlbl2.png"/>
+                            <h2 class = "userlabel">Sex</h2>
+                        </div>
+                        <h2 class = "userinfo vw50 right">[[sex]]</h2>
+                    </div>
+                    <div class = "userinfocont">
+                        <div class = "alignedflex vw50">
+                            <img class = "labelimg" alt = "Sex Icon" src = "assets/accountlbl3.png"/>
+                            <h2 class = "userlabel">Phone No.</h2>
+                        </div>
+                        <h2 class = "userinfo vw50 right">[[phone]]</h2>
+                    </div>
+                    <div class = "userinfocont">
+                        <div class = "alignedflex vw50">
+                            <img class = "labelimg" alt = "Sex Icon" src = "assets/accountlbl4.png"/>
+                            <h2 class = "userlabel">Email</h2>
+                        </div>
+                        <h2 class = "userinfo vw50 right">[[email]]</h2>
+                    </div>
+                    <div class = "userinfocont">
+                        <div class = "alignedflex vw50">
+                            <img class = "labelimg" alt = "Sex Icon" src = "assets/accountlbl5.png"/>
+                            <h2 class = "userlabel">Address</h2>
+                        </div>
+                        <h2 class = "userinfo vw50 right">[[address]]</h2>
+                    </div>
+                </div>
+                <!-- <div class = "footer"></div> -->
+            </div>
+            <div class = "adoptionrequest">
+                <table class = "adoptreqtable">
+                    <tr>
+                        <th class = "tableheader" colspan = 4>Pending Adoption Request</th>
+                    </tr>
+                    <tr class = "tblseperator">
+                        <th class = "tablelabels" colspan = 3>Dog Information</th>
+                        <th class = "tablelabels tblsideseperator">Status</th>
+                    </tr>
+                    <!-- <div *ngFor="let adoption of user"> -->
+                        <tr class = "tblseperator center">
+                            <!-- <a href="/ewan/{{dog.medicalhistory}}"> -->
+                                <td class = "tabledata vw30">
+                                    <!-- <img class = "dogimage" alt = "Dog Image" src = [[dogimg]]> -->
+                                    <img class = "dogimage" alt = "Dog Image" src = "assets/sampledog.png">
+                                </td>
+                                <td class = "tabledata vw25">
+                                    <!-- <p>[[dog.name]]</p> -->
+                                    <p>Ervin Garcia</p>
+                                    <p class = "tblabel">Name</p>
+                                </td>
+                                <td class = "tabledata vw25">
+                                    <!-- <p>[[dog.name]]</p> -->
+                                    <p>Golden Retriever</p>
+                                    <p class = "tblabel">Breed</p>
+                                </td>
+                                <td class = "tabledata tblsideseperator vw20">
+                                    <!-- <p>[[adoptionstatus]]</p> -->
+                                    <p>PENDING</p>
+                                </td>
+                            <!-- </a> -->
+                        </tr>
+                    <!-- </div> -->
+                </table>
+
+            </div>
+        </div>
+    </body>
+</html>
