@@ -5,6 +5,7 @@ import com.example.dogadoption.models.Vet;
 import com.example.dogadoption.services.DogService;
 import com.example.dogadoption.services.VetService;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -12,9 +13,11 @@ import java.util.List;
 @RestController
 public class DogController {
     public final DogService dogService;
+
     public DogController(DogService dogService, VetService vetService) {
         this.dogService = dogService;
     }
+
     @GetMapping("dogs")
     public List<Dog> getAllDogs() {
         return dogService.getAllDogs();
@@ -25,9 +28,26 @@ public class DogController {
         return dogService.getDogById(id).orElse(null);
     }
 
-    @RequestMapping(value = "/dog")
-    public Dog addDog(@RequestBody Dog dog) {
-        return dogService.addDog(dog);
+    @PostMapping("/dog")
+    public String addDog(@RequestParam("dogImage")MultipartFile dogImage, @ModelAttribute Dog dog) {
+        try {
+            String pictureName = dogImage.getOriginalFilename();
+            String pictureType = dogImage.getContentType();
+            byte[] fileContent = dogImage.getBytes();
+            // Set image information
+            dog.setPictureName(pictureName);
+            dog.setPictureType(pictureType);
+            dog.setPicture(fileContent);
+
+            dogService.addDog(dog);
+
+
+            return "File saved successfully";
+        }
+
+        catch(Exception e) {
+            return "File not saved";
+        }
     }
 
     @PutMapping("dog/{id}")

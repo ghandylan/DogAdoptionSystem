@@ -1,6 +1,7 @@
 package com.example.dogadoption.models;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.Objects;
 
 @Entity
@@ -11,7 +12,11 @@ public class Dog {
     private long id;
 
     // TODO: Determine how to store images in database
-    private String picture;
+    @Lob
+    private byte[] picture;
+    private String pictureName;
+    private String pictureType;
+
     private String name;
     private int age;
     private String dateOfBirth;
@@ -24,9 +29,14 @@ public class Dog {
     public Dog() {
     }
 
-    public Dog(long id, String picture, String name, int age, String dateOfBirth, String gender, String breed, int height, int weight, String medicalConditions) {
+
+
+
+    public Dog(long id, byte[] picture, String pictureName, String pictureType, String name, int age, String dateOfBirth, String gender, String breed, int height, int weight, String medicalConditions) {
         this.id = id;
         this.picture = picture;
+        this.pictureName = pictureName;
+        this.pictureType = pictureType;
         this.name = name;
         this.age = age;
         this.dateOfBirth = dateOfBirth;
@@ -37,19 +47,37 @@ public class Dog {
         this.medicalConditions = medicalConditions;
     }
 
+
+
     public long getId() {
         return id;
+    }
+
+    public String getPictureName() {
+        return pictureName;
+    }
+
+    public void setPictureName(String pictureName) {
+        this.pictureName = pictureName;
+    }
+
+    public String getPictureType() {
+        return pictureType;
+    }
+
+    public void setPictureType(String pictureType) {
+        this.pictureType = pictureType;
     }
 
     public void setId(long id) {
         this.id = id;
     }
 
-    public String getPicture() {
+    public byte[] getPicture() {
         return picture;
     }
 
-    public void setPicture(String picture) {
+    public void setPicture(byte[] picture) {
         this.picture = picture;
     }
 
@@ -118,23 +146,12 @@ public class Dog {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Dog dog = (Dog) o;
-        return getId() == dog.getId() && getAge() == dog.getAge() && getHeight() == dog.getHeight() && getWeight() == dog.getWeight() && Objects.equals(getPicture(), dog.getPicture()) && Objects.equals(getName(), dog.getName()) && Objects.equals(getDateOfBirth(), dog.getDateOfBirth()) && Objects.equals(getGender(), dog.getGender()) && Objects.equals(getBreed(), dog.getBreed()) && Objects.equals(getMedicalConditions(), dog.getMedicalConditions());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getPicture(), getName(), getAge(), getDateOfBirth(), getGender(), getBreed(), getHeight(), getWeight(), getMedicalConditions());
-    }
-
-    @Override
     public String toString() {
         return "Dog{" +
                 "id=" + id +
-                ", picture='" + picture + '\'' +
+                ", picture=" + Arrays.toString(picture) +
+                ", pictureName='" + pictureName + '\'' +
+                ", pictureType='" + pictureType + '\'' +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
@@ -145,4 +162,20 @@ public class Dog {
                 ", medicalConditions='" + medicalConditions + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Dog dog = (Dog) o;
+        return getId() == dog.getId() && getAge() == dog.getAge() && getHeight() == dog.getHeight() && getWeight() == dog.getWeight() && Arrays.equals(getPicture(), dog.getPicture()) && Objects.equals(getPictureName(), dog.getPictureName()) && Objects.equals(getPictureType(), dog.getPictureType()) && Objects.equals(getName(), dog.getName()) && Objects.equals(getDateOfBirth(), dog.getDateOfBirth()) && Objects.equals(getGender(), dog.getGender()) && Objects.equals(getBreed(), dog.getBreed()) && Objects.equals(getMedicalConditions(), dog.getMedicalConditions());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(getId(), getPictureName(), getPictureType(), getName(), getAge(), getDateOfBirth(), getGender(), getBreed(), getHeight(), getWeight(), getMedicalConditions());
+        result = 31 * result + Arrays.hashCode(getPicture());
+        return result;
+    }
+
 }
