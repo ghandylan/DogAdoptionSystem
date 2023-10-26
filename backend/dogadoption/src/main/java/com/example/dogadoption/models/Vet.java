@@ -6,10 +6,10 @@ import java.util.Objects;
 @Entity
 @Table(name = "vet")
 public class Vet {
-    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Id
     private String username;
     private String password;
     private String address;

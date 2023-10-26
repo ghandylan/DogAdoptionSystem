@@ -8,14 +8,14 @@ import java.util.Optional;
 
 @Service
 public class IVetService implements VetService{
-    private final VetRepository vetRepository;
+        private final VetRepository vetRepository;
     public IVetService(VetRepository vetRepository) {
         this.vetRepository = vetRepository;
     }
     @Override
-    public Optional<Vet> findVet(Long id){
-        if(vetRepository.existsById(id)){
-            return vetRepository.findById(id);
+    public Optional<Vet> findVetUsername(String username){
+        if(vetRepository.existsById(username)){
+            return vetRepository.findById(username);
         }else{
             return Optional.empty();
         }
@@ -25,9 +25,9 @@ public class IVetService implements VetService{
         System.out.println("WORKKKKKKK");
         return vetRepository.save(vet);}
     @Override
-    public void deleteVet(Long id){
-        if(vetRepository.existsById(id)){
-            vetRepository.deleteById(id);
+    public void deleteVet(String username){
+        if(vetRepository.existsById(username)){
+            vetRepository.deleteById(username);
         }else {
             System.out.println("Vet Deleted!");
         }

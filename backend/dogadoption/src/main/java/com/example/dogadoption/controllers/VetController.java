@@ -13,16 +13,16 @@ public class VetController {
     public VetController(VetService vetService) {
         this.vetService = vetService;
     }
-    @RequestMapping(value = "/vet/{id}")
-    public Optional<Vet> findVetById(@PathVariable Long id){
-        return vetService.findVet(id);
+    @RequestMapping(value = "/vet/{username}")
+    public Optional<Vet> findVetById(@PathVariable String username){
+        return vetService.findVetUsername(username);
     }
     @RequestMapping(value = "vet/create")
     public Vet createVet(@RequestBody Vet vet){
         return vetService.addVet(vet);
     }
-    @RequestMapping(value = "/vet/{id}/delete")
-    public void deleteVet(@PathVariable Long id){
-        vetService.deleteVet(id);
+    @RequestMapping(value = "/vet/{username}/delete")
+    public void deleteVet(@PathVariable String username){
+        vetService.deleteVet(username);
     }
 }

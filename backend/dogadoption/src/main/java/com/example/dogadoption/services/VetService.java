@@ -5,9 +5,7 @@ import com.example.dogadoption.models.Vet;
 import java.util.Optional;
 
 public interface VetService {
-    Optional<Vet> findVet(Long id);
-
+    Optional<Vet> findVetUsername(String username);
     Vet addVet(Vet vet);
-
-    void deleteVet(Long id);
+    void deleteVet(String username);
 }
