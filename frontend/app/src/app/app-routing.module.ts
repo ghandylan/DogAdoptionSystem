@@ -11,6 +11,18 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegistrationComponent},
   { path: 'profile', component: UserProfileComponent}
+
+
+  // {pending}
+  // AdminShowDogsComponent, AdminShowDogComponent, AdminDatabaseComponent
+  //Gawa ni Jakwes:
+  // { path: '', redirectTo: 'dogs', pathMatch: 'full' },
+  // { path: 'dogs', component: ShowDogsComponent },
+  // { path: 'dogs/:id', component: ShowDogComponent },
+  // { path: 'admindatabase', component: AdminDatabaseComponent}
+
+
+  
 ];
 
 @NgModule({
