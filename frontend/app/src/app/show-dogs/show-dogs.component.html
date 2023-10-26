@@ -1,216 +1,103 @@
 <!DOCTYPE html>
 <html>
-    <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div class = "header">
-            <img class = "headerbg" alt = "Header Background Image" src = "assets/tilesbg.png">
-            <img class = "fulllogo" alt = "Logo" src = "assets/fulllogo.png">
-            <div class = "headertitlecont">
-                <h1 class = "headertitle">Home</h1>
-            </div>
-            <ul class="hList">
-                <li>
-                  <a href="#click" class="menu">
-                    <img class="menu-title" alt = "Menu Icon" src = "assets/menu.png">
-                    <ul class="menu-dropdown">
-                      <li>View All</li>
-                      <li>Profile</li>
-                      <li>Log Out</li>
-                    </ul>
-                  </a>
-                </li>
-            </ul>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="header">
+  <img class="headerbg" alt="Header Background Image" src="assets/tilesbg.png">
+  <img class="fulllogo" alt="Logo" src="assets/fulllogo.png">
+  <div class="headertitlecont">
+    <h1 class="headertitle">Home</h1>
+  </div>
+  <ul class="hList">
+    <li>
+      <a href="#click" class="menu">
+        <img class="menu-title" alt="Menu Icon" src="assets/menu.png">
+        <ul class="menu-dropdown">
+          <li>View All</li>
+          <li>Profile</li>
+          <li>Log Out</li>
+        </ul>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="headerseperator"><br></div>
+
+<div class="cirleimagescont">
+  <img class="homecircle1" alt="Dogs" src="assets/homedogs1.jpg">
+  <img class="homecircle2" alt="Dogs" src="assets/homedogs2.jpg">
+  <img class="homecircle3" alt="Dogs" src="assets/homedogs3.jpg">
+  <img class="homecircle4" alt="Dogs" src="assets/homedogs4.png">
+  <img class="homecircle5" alt="Dogs" src="assets/homedogs5.jpg">
+  <img class="homecircle6" alt="Dogs" src="assets/homedogs6.jpg">
+  <img class="homecircle7" alt="Dogs" src="assets/homedogs7.png">
+  <img class="homecircle8" alt="Dogs" src="assets/homedogs8.jpg">
+  <img class="homecircle9" alt="Dogs" src="assets/homedogs9.jpg">
+  <img class="homecircle10" alt="Dogs" src="assets/homedogs10.jpg">
+  <img class="homecircle11" alt="Dogs" src="assets/homedogs11.png">
+</div>
+
+<div class="centeredflex vw100">
+  <img class="homelogo" alt="Logo" src="assets/logo.png">
+</div>
+
+<div class="homeinformation">
+  <div class="centeredflex">
+    <div class="homelogoseperator"><br></div>
+  </div>
+  <div class="centeredflex">
+    <p class="homeinformationtext">Welcome to ARF-Doption, where hearts are touched and lives are changed through the
+      power of dog adoption! We are
+      delighted to present a platform dedicated to connecting loving families with their perfect canine companions. Our
+      mission is to create a world where every dog finds a forever home, filled with love, care, and endless tail wags.
+      With a wide range of adorable, loyal, and deserving dogs eagerly waiting to be embraced, ARF-Doption is your
+      gateway to a lifetime of unconditional love and companionship. Join us on this heartwarming journey as we unite
+      deserving dogs with their forever families, one wagging tail at a time. Together, let's make a difference in the
+      lives of these incredible creatures and experience the joy that comes from adopting a dog. Start your tail-wagging
+      adventure with Arf-doption today!</p>
+  </div>
+  <div class="centeredflex">
+    <div class="homelogoseperator"><br></div>
+  </div>
+</div>
+
+<div class="availabledogscont" *ngFor="let dog of dogs">
+
+  <!-- ngFor something------------------------------------------------------------- -->
+  <div class="flip-card">
+    <a href="tite">
+      <div class="flip-card-inner">
+
+
+        <div class="flip-card-front">
+          <img class="flipfrontimg" alt="Dog Image" src="data:image/png;base64, {{dog.picture}}">
         </div>
-        <div class = "headerseperator"><br></div>
 
-        <div class = "cirleimagescont">
-            <img class = "homecircle1" alt = "Dogs" src = "assets/homedogs1.jpg">
-            <img class = "homecircle2" alt = "Dogs" src = "assets/homedogs2.jpg">
-            <img class = "homecircle3" alt = "Dogs" src = "assets/homedogs3.jpg">
-            <img class = "homecircle4" alt = "Dogs" src = "assets/homedogs4.png">
-            <img class = "homecircle5" alt = "Dogs" src = "assets/homedogs5.jpg">
-            <img class = "homecircle6" alt = "Dogs" src = "assets/homedogs6.jpg">
-            <img class = "homecircle7" alt = "Dogs" src = "assets/homedogs7.png">
-            <img class = "homecircle8" alt = "Dogs" src = "assets/homedogs8.jpg">
-            <img class = "homecircle9" alt = "Dogs" src = "assets/homedogs9.jpg">
-            <img class = "homecircle10" alt = "Dogs" src = "assets/homedogs10.jpg">
-            <img class = "homecircle11" alt = "Dogs" src = "assets/homedogs11.png">
+
+        <div class="flip-card-back">
+          <img class="flipbackimg" alt="Dog Icon" src="assets/bullet.png">
+          <h1 class="center">{{dog.name}}</h1>
+          <p class="center">{{dog.age}} Years Old</p>
+          <p class="center">{{dog.gender}}</p>
+          <p class="center">{{dog.breed}}</p>
         </div>
 
-        <div class = "centeredflex vw100">
-            <img class = "homelogo" alt = "Logo" src = "assets/logo.png">
-        </div>
 
-        <div class = "homeinformation">
-            <div class = "centeredflex">
-                <div class = "homelogoseperator"><br></div>
-            </div>
-            <div class = "centeredflex">
-                <p class = "homeinformationtext">Welcome to ARF-Doption, where hearts are touched and lives are changed through the power of dog adoption! We are 
-                    delighted to present a platform dedicated to connecting loving families with their perfect canine companions. Our 
-                    mission is to create a world where every dog finds a forever home, filled with love, care, and endless tail wags. 
-                    With a wide range of adorable, loyal, and deserving dogs eagerly waiting to be embraced, ARF-Doption is your 
-                    gateway to a lifetime of unconditional love and companionship. Join us on this heartwarming journey as we unite 
-                    deserving dogs with their forever families, one wagging tail at a time. Together, let's make a difference in the 
-                    lives of these incredible creatures and experience the joy that comes from adopting a dog. Start your tail-wagging 
-                    adventure with Arf-doption today!</p>
-            </div>
-            <div class = "centeredflex">
-                <div class = "homelogoseperator"><br></div>
-            </div>
-        </div>
-
-        <div class = "availabledogscont">
-
-            <!-- ngFor something------------------------------------------------------------- -->
-                <div class = "flip-card">
-                    <a href = "tite">
-                        <div class = "flip-card-inner">
+      </div>
+    </a>
+  </div>
 
 
-                            <div class = "flip-card-front">
-                                <img class = "flipfrontimg" alt="Dog Image" src = "assets/sampledog.png">
-                            </div>
+</div>
 
 
-                            <div class="flip-card-back">
-                                <img class = "flipbackimg" alt="Dog Icon" src = "assets/bullet.png">
-                                <h1 class = "center">Bad Bitch</h1>
-                                <p class = "center">2 Years Old</p>
-                                <p class = "center">Female</p>
-                                <p class = "center">Golden Retriever</p>
-                            </div>
+<div class="centeredflex vw100">
+  <div class="homelogoseperator"><br></div>
+</div>
+<div class="footer"></div>
 
 
-                        </div>
-                    </a>
-                </div>
-            <!-- ngFor something------------------------------------------------------------- -->
-
-            <div class = "flip-card">
-                <a href = "tite">
-                    <div class = "flip-card-inner">
-                        <div class = "flip-card-front">
-                            <img class = "flipfrontimg" alt="Dog Image" src = "assets/sampledog.png">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class = "flipbackimg" alt="Dog Icon" src = "assets/bullet.png">
-                            <h1 class = "center">Bad Bitch</h1>
-                            <p class = "center">2 Years Old</p>
-                            <p class = "center">Female</p>
-                            <p class = "center">Golden Retriever</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class = "flip-card">
-                <a href = "tite">
-                    <div class = "flip-card-inner">
-                        <div class = "flip-card-front">
-                            <img class = "flipfrontimg" alt="Dog Image" src = "assets/sampledog.png">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class = "flipbackimg" alt="Dog Icon" src = "assets/bullet.png">
-                            <h1 class = "center">Bad Bitch</h1>
-                            <p class = "center">2 Years Old</p>
-                            <p class = "center">Female</p>
-                            <p class = "center">Golden Retriever</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class = "flip-card">
-                <a href = "tite">
-                    <div class = "flip-card-inner">
-                        <div class = "flip-card-front">
-                            <img class = "flipfrontimg" alt="Dog Image" src = "assets/sampledog.png">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class = "flipbackimg" alt="Dog Icon" src = "assets/bullet.png">
-                            <h1 class = "center">Bad Bitch</h1>
-                            <p class = "center">2 Years Old</p>
-                            <p class = "center">Female</p>
-                            <p class = "center">Golden Retriever</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class = "flip-card">
-                <a href = "tite">
-                    <div class = "flip-card-inner">
-                        <div class = "flip-card-front">
-                            <img class = "flipfrontimg" alt="Dog Image" src = "assets/sampledog.png">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class = "flipbackimg" alt="Dog Icon" src = "assets/bullet.png">
-                            <h1 class = "center">Bad Bitch</h1>
-                            <p class = "center">2 Years Old</p>
-                            <p class = "center">Female</p>
-                            <p class = "center">Golden Retriever</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class = "flip-card">
-                <a href = "tite">
-                    <div class = "flip-card-inner">
-                        <div class = "flip-card-front">
-                            <img class = "flipfrontimg" alt="Dog Image" src = "assets/sampledog.png">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class = "flipbackimg" alt="Dog Icon" src = "assets/bullet.png">
-                            <h1 class = "center">Bad Bitch</h1>
-                            <p class = "center">2 Years Old</p>
-                            <p class = "center">Female</p>
-                            <p class = "center">Golden Retriever</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class = "flip-card">
-                <a href = "tite">
-                    <div class = "flip-card-inner">
-                        <div class = "flip-card-front">
-                            <img class = "flipfrontimg" alt="Dog Image" src = "assets/sampledog.png">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class = "flipbackimg" alt="Dog Icon" src = "assets/bullet.png">
-                            <h1 class = "center">Bad Bitch</h1>
-                            <p class = "center">2 Years Old</p>
-                            <p class = "center">Female</p>
-                            <p class = "center">Golden Retriever</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class = "flip-card">
-                <a href = "tite">
-                    <div class = "flip-card-inner">
-                        <div class = "flip-card-front">
-                            <img class = "flipfrontimg" alt="Dog Image" src = "assets/sampledog.png">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class = "flipbackimg" alt="Dog Icon" src = "assets/bullet.png">
-                            <h1 class = "center">Bad Bitch</h1>
-                            <p class = "center">2 Years Old</p>
-                            <p class = "center">Female</p>
-                            <p class = "center">Golden Retriever</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class = "centeredflex vw100">
-            <div class = "homelogoseperator"><br></div>
-        </div>
-        <div class = "footer"></div>
-    </body>
+</body>
 </html>
