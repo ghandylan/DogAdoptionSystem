@@ -33,10 +33,49 @@
     margin-top: 5vh;
 }
 
+.centeredflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vw100 {
+    width: 100vw;
+}
+
+.submitbtn {
+    background-color: rgba(208,169,51,255);
+    color: white;
+    font-size: 1.4em;
+    border: none;
+    border-radius: 40px;
+    outline: none;
+    width: 15%;
+    height: 7vh;
+    margin-top: 5vh;
+}
+
+.submitbtn:hover {
+    transition: 0.3s;
+    background-color: white;
+    color: rgba(208,169,51,255);
+    border: 2px solid rgba(208,169,51,255);
+}
+
+.link {
+    margin-top: 1.5vh;
+    color: rgba(208,169,51,255);
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+
+
+
 .animate-label {
     position: relative;
     margin-top: 30px;
-    margin-left: 33vw;
+    margin-left: 34vw;
   }
   
   .animate-label label {
