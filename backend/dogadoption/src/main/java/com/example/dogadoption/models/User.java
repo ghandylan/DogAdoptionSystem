@@ -5,7 +5,6 @@ import java.util.Objects;
 
 @Entity
 public class User {
-    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
@@ -13,6 +12,9 @@ public class User {
     private String lastName;
     private String initials;
     private String phone;
+
+    // Primary key
+    @Id
     private String email;
     private String password;
     private String address;
