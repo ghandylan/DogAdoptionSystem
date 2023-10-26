@@ -15,7 +15,14 @@ const routes: Routes = [
 
   // {pending}
   // AdminShowDogsComponent, AdminShowDogComponent, AdminDatabaseComponent
+  //Gawa ni Jakwes:
+  // { path: '', redirectTo: 'dogs', pathMatch: 'full' },
+  // { path: 'dogs', component: ShowDogsComponent },
+  // { path: 'dogs/:id', component: ShowDogComponent },
+  // { path: 'admindatabase', component: AdminDatabaseComponent}
 
+
+  
 ];
 
 @NgModule({
