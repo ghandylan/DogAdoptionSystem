@@ -1,0 +1,77 @@
+.border {
+    outline: none;
+    border: none;
+}
+
+.logocont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.loginformcont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.input {
+    z-index: 1;
+    font-size: 2em;
+    outline: none;
+    border: none;
+    width: 50%;
+}
+
+.gold {
+    background-color: rgba(208,169,51,255);
+}
+
+.top5 {
+    margin-top: 5vh;
+}
+
+.animate-label {
+    position: relative;
+    margin-top: 30px;
+    margin-left: 33vw;
+  }
+  
+  .animate-label label {
+    position: absolute;
+    text-align: center;
+    bottom: 6px;
+    left: 0;
+    transition: .3s all ease;
+    font-size: 2em;
+    width: 50%;
+    color: #888888;
+  }
+  
+  .animate-label input:valid + label,
+  .animate-label input:focus + label {
+    text-align: left;
+    bottom: 50px;
+    font-size: 20px;
+  }
+  
+  .animate-label input:focus + label {
+    color: rgba(208,169,51,255);
+  }
+  
+  .animate-label .line {
+    position: absolute;
+    background: rgba(208,169,51,255);
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    transition: all .3s ease;
+  }
+  
+  .animate-label input:focus ~ .line {
+    width: 50%;
+    transition: all .3s ease;
+  }
