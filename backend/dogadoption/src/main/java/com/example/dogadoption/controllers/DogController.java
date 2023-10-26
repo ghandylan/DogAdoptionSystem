@@ -44,9 +44,9 @@ public class DogController {
             dogService.addDog(dog);
 
 
-            return "File saved successfully";
+            return "Dog saved successfully";
         } catch (Exception e) {
-            return "File not saved";
+            return "Dog not saved";
         }
     }
 

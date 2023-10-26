@@ -14,22 +14,18 @@ public class User {
     private String initials;
     private String phone;
     private String email;
+    private String password;
     private String address;
     private String dateAndTimeCreated;
 
     public User() {
     }
 
-    public User(long id, String firstName, String lastName, String initials, String phone, String email, String address, String dateAndTimeCreated) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.initials = initials;
-        this.phone = phone;
+    public User(String email, String password) {
         this.email = email;
-        this.address = address;
-        this.dateAndTimeCreated = dateAndTimeCreated;
+        this.password = password;
     }
+
 
     public long getId() {
         return id;
@@ -79,6 +75,14 @@ public class User {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -100,12 +104,12 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return getId() == user.getId() && Objects.equals(getFirstName(), user.getFirstName()) && Objects.equals(getLastName(), user.getLastName()) && Objects.equals(getInitials(), user.getInitials()) && Objects.equals(getPhone(), user.getPhone()) && Objects.equals(getEmail(), user.getEmail()) && Objects.equals(getAddress(), user.getAddress()) && Objects.equals(getDateAndTimeCreated(), user.getDateAndTimeCreated());
+        return getId() == user.getId() && Objects.equals(getFirstName(), user.getFirstName()) && Objects.equals(getLastName(), user.getLastName()) && Objects.equals(getInitials(), user.getInitials()) && Objects.equals(getPhone(), user.getPhone()) && Objects.equals(getEmail(), user.getEmail()) && Objects.equals(getPassword(), user.getPassword()) && Objects.equals(getAddress(), user.getAddress()) && Objects.equals(getDateAndTimeCreated(), user.getDateAndTimeCreated());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getFirstName(), getLastName(), getInitials(), getPhone(), getEmail(), getAddress(), getDateAndTimeCreated());
+        return Objects.hash(getId(), getFirstName(), getLastName(), getInitials(), getPhone(), getEmail(), getPassword(), getAddress(), getDateAndTimeCreated());
     }
 
     @Override
@@ -117,6 +121,7 @@ public class User {
                 ", initials='" + initials + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", address='" + address + '\'' +
                 ", dateAndTimeCreated='" + dateAndTimeCreated + '\'' +
                 '}';

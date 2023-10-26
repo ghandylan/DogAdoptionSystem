@@ -4,13 +4,18 @@ import {ShowDogsComponent} from './show-dogs/show-dogs.component';
 import {LoginComponent} from "./login/login.component";
 import {UserProfileComponent} from "./user-profile/user-profile.component";
 import {RegistrationComponent} from "./registration/registration.component";
+import {AdminShowDogsComponent} from "./admin-show-dogs/admin-show-dogs.component";
+import {AdminShowDogComponent} from "./admin-show-dog/admin-show-dog.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'dogs', pathMatch: 'full' },
   { path: 'dogs', component: ShowDogsComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegistrationComponent},
-  { path: 'profile', component: UserProfileComponent}
+  { path: 'profile', component: UserProfileComponent},
+  //admin
+  { path:'admin/dogs', component: AdminShowDogsComponent},
+  { path:'admin/dog/:id', component: AdminShowDogComponent},
 
 
   // {pending}
@@ -22,7 +27,7 @@ const routes: Routes = [
   // { path: 'admindatabase', component: AdminDatabaseComponent}
 
 
-  
+
 ];
 
 @NgModule({
