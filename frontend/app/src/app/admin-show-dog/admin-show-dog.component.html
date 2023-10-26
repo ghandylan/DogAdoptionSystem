@@ -1,0 +1,57 @@
+
+<body>
+    <div class="container-fluid">
+        <!-- Topbar -->
+        <div class="row py-3 px-lg-5">
+            <div class="col-lg-4">
+                <a href="" class="navbar-brand d-none d-lg-block">
+                    <h1 class="m-0 display-5 text-capitalize"><span class="text-primary">ADMIN || Saving Abused </span>and Neglected Animals</h1>
+                </a>
+            </div>
+            <div class="col-lg-8 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <!-- Add topbar content here -->
+                </div>
+            </div>
+        </div>
+        <!-- Navbar -->
+        <div class="container-fluid p-0">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto py-0">
+                        <a href="/adminhome" class="nav-item nav-link active">Home</a>
+                        <a href="/adminadoptionportal" class="nav-item nav-link">Adoption Portal</a>
+                    </div>
+                    <a href="/logout" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Logout</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Main Content -->
+        <main class="container mt-5">
+            <h1>Dog</h1>
+                <form>
+                    Dog id: <input type="text" name="id" value="{{dog.id}}"/> <br>
+                    Dog name: <input type="text" name="name" value="{{dog.name}}"/> <br>
+                    Dog age: <input type="text" name="age" value="{{dog.age}}"/><br>
+                    Dog breed: <input type="text" name="breed" value="{{dog.breed}}"/><br>
+                    Dog picture: <input type="text" name="picture" value="{{dog.picture}}"/><br>
+                    Dog height: <input type="text" name="height" value="{{dog.height}}"/><br>
+                    Dog weight: <input type="text" name="weight" value="{{dog.weight}}"/><br>
+                <!-- Add other dog-related fields here -->
+                <th>Name</th>
+                <th>Age</th>
+                <th>Breed</th>
+                <th>Picture</th>
+                <th>Height</th>
+                <th>Weight</th>
+
+                </form>
+        </main>
+    </div>
+    <script>
+        // Add your JavaScript logic here
+    </script>
+</body>

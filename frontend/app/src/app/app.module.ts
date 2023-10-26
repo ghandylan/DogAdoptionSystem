@@ -9,6 +9,9 @@ import { ShowDogComponent } from './show-dog/show-dog.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import {LoginComponent} from "./login/login.component";
 import {RegistrationComponent} from "./registration/registration.component";
+import { AdminShowDogsComponent } from './admin-show-dogs/admin-show-dogs.component';
+import { AdminShowDogComponent } from './admin-show-dog/admin-show-dog.component';
+import { AdminDatabaseComponent } from './admin-database/admin-database.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import {RegistrationComponent} from "./registration/registration.component";
     ShowDogComponent,
     UserProfileComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    AdminShowDogsComponent,
+    AdminShowDogComponent,
+    AdminDatabaseComponent
   ],
   imports: [
     BrowserModule,

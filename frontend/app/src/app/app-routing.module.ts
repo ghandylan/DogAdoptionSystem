@@ -11,6 +11,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegistrationComponent},
   { path: 'profile', component: UserProfileComponent}
+
+
+  // {pending}
+  // AdminShowDogsComponent, AdminShowDogComponent, AdminDatabaseComponent
+
 ];
 
 @NgModule({
