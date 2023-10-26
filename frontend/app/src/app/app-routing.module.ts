@@ -4,7 +4,7 @@ import {ShowDogsComponent} from './show-dogs/show-dogs.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dogs', pathMatch: 'full' },
-  { path: 'dogs', component: ShowDogsComponent },
+  { path: 'dogs', component: ShowDogsComponent},
   // TODO: Add a route for the dog detail component
 ];
 

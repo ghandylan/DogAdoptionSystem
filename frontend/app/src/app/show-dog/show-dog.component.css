@@ -6,10 +6,7 @@ h1, h2, h3, p, a, li, ul, span, div, td, th {
 
 body {
     margin: 0;
-    /* height: 200vh; */
     width: 100%;
-    /* overflow-y: scroll;
-    overflow-x: hidden; */
 }
 
 .block {
@@ -100,6 +97,10 @@ body {
     margin-top: 7vh;
 }
 
+.top10 {
+    margin-top: 12vh;
+}
+
 .left {
     text-align: left;
 }
@@ -118,6 +119,10 @@ body {
 
 .black {
     background-color: black;
+}
+
+.border {
+    border: 5px solid rgba(208,169,51,255);
 }
 
 
@@ -163,6 +168,10 @@ body {
     text-align: right;
     font-size: 3.5vw;
     color: rgba(208,169,51,255);
+}
+
+.footer {
+    height: 3vh;
 }
 
 
@@ -234,7 +243,7 @@ body {
     text-align: center;
     font-size: 4.5vw;
     font-weight: bold;
-    color: rgba(208,169,51,255);
+    color: black;
 }
 
 .doginfolbl2 {
@@ -253,7 +262,7 @@ body {
 
 .doginfoimage {
     z-index: -1;
-    margin-top: -17vh;
+    margin-top: -15vh;
     height: 60vh;
     width: auto;
     border-radius: 300px;
@@ -305,9 +314,6 @@ body {
     border: 3px solid rgba(208,169,51,255);
 }
 
-
-
-
 .adoptionrequestcont {
     display: flex;
     align-content: center;
@@ -320,34 +326,76 @@ body {
     width: 60%;
 }
 
-
-
-
+.adoptionexp {
+    text-align: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-bottom: 2vh;
+}
 
 .adoptionformcont {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+    display: "block";
     width: 40%;
 }
 
-.adoptionform {
-    width: 90%;
-    border: 3px solid rgba(208,169,51,255);
+.adoptionformrow {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 6vh;
+    width: 100%;
 }
 
+.adoptionformlabel {
+    width: 40%;
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(208,169,51,255);
+    border-radius: 30px;
+}
 
+.adoptionformdata {
+    height: 10vh;
+    margin-left: 1.5vw;
+    width: 50%;
+    text-align: center;
+    font-size: 1.5vw;
+    color: rgba(208,169,51,255);
+    border-bottom: 3px solid rgba(208,169,51,255);
+}
 
+.adoptionform {
+    margin-top: 5vh;
+    height: 90%;
+    width: 90%;
+    background-color: rgba(208,169,51,255);
+    border-radius: 50px;
+}
 
+.adoptionformdate {
+    margin-top: 3vh;
+    font-size: 1.5vw;
+    color: rgba(208,169,51,255);
+    border: none;
+}
 
+.adoptionformsubmit {
+    font-size: 1.3vw;
+    height: 8vh;
+    width: 10vw;
+    border-radius: 30px;
+    border: 3px solid rgba(208,169,51,255);
+    background-color: white;
+    color: rgba(208,169,51,255);
+}
 
-
-
-
-
-
-
-
+.adoptionformsubmit:hover {
+    transition: 0.2s;
+    background-color: rgba(208,169,51,255);
+    color: white;
+}
 
 
 
@@ -509,10 +557,6 @@ a {
       0.6s visibility;
     z-index: 99;
   }
-  
-  /* .hList {
-    overflow: hidden;
-  } */
   
   .hList > * {
     float: left;
