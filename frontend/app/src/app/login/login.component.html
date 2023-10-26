@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>
-            <div class = "logocont">
-                <img class = "logo" alt = "Logo" src = "assets/fulllogo.png">
-            </div>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div>
+  <div class="logocont">
+    <img class="logo" alt="Logo" src="assets/fulllogo.png">
+  </div>
 
-            <form>
-                <div class = "loginform">
-                    <div class="animate-label">
-                        <input class = "input" type="email" id="username" required/>
-                        <label for="username">Enter User Email</label>
-                        <div class="line"></div>
-                    </div>
-                    <div class="animate-label">
-                        <input class = "input top5" type="password" id="password" required/>
-                        <label for="password">Enter Password</label>
-                        <div class="line"></div>
-                    </div>
-                    <div class = "centeredflex vw100">
-                        <input class = "submitbtn" type = "submit" value = "Submit"/>
-                    </div>
-                </div>
-            </form>
+  <form (ngSubmit)="onSubmit()">
+    <div class="loginform">
+      <div class="animate-label">
+        <input class="input" type="email" id="username" required [(ngModel)]="username" name="username"/>
+        <label for="username">Enter User Email</label>
+        <div class="line"></div>
+      </div>
+      <div class="animate-label">
+        <input class="input top5" type="password" id="password" required [(ngModel)]="password" name="password"/>
+        <label for="password">Enter Password</label>
+        <div class="line"></div>
+      </div>
+      <div class="centeredflex vw100">
+        <button class="submitbtn" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
 
-            <div class = "centeredflex vw100">
-<!--               redirect to register component page -->
+  <div class="centeredflex vw100">
+    <!--               redirect to register component page -->
 
-                <a class = "link"  (click)="redirectToRegister()">Create Account?</a>
-            </div>
+    <a class="link" (click)="redirectToRegister()">Create Account?</a>
+  </div>
 
-        </div>
-    </body>
+</div>
+</body>
 </html>
