@@ -183,194 +183,151 @@ body {
 
 
 
-.cirleimagescont {
-    position: relative;
-    width: 100%;
-}
-.homecircle1 {
-    position: absolute;
-    margin-top: 19vh;
-    margin-left: 27vw;
-    height: 20vh;
-    width: 20vh;
-    border-radius: 300px;
+.user {
+    width: 25%;
 }
 
-.homecircle2 {
-    position: absolute;
+.usercont {
+    margin-left: 1vw;
     margin-top: 4vh;
-    margin-left: 62vw;
-    height: 10vh;
-    width: 10vh;
-    border-radius: 300px;
+    height: fit-content;
+    width: 93%;
+    border-radius: 8px;
+    border: 3px solid rgba(208,169,51,255);
 }
 
-.homecircle3 {
-    position: absolute;
-    margin-top: 6vh;
-    margin-left: 18vw;
-    height: 15vh;
-    width: 15vh;
-    border-radius: 300px;
-}
-
-.homecircle4 {
-    position: absolute;
-    margin-top: 25vh;
-    margin-left: 62vw;
-    height: 25vh;
-    width: 25vh;
-    border-radius: 300px;
-}
-
-.homecircle5 {
-    position: absolute;
-    margin-top: 7vh;
-    margin-left: 43vw;
-    height: 11vh;
-    width: 11vh;
-    border-radius: 300px;
-}
-
-.homecircle6 {
-    position: absolute;
+.userimg {
     margin-top: 4vh;
-    margin-left: 88vw;
-    height: 15vh;
-    width: 15vh;
-    border-radius: 300px;
-}
-
-.homecircle7 {
-    position: absolute;
-    margin-top: 4vh;
-    margin-left: 33vw;
-    height: 9vh;
-    width: 9vh;
-    border-radius: 300px;
-}
-
-.homecircle8 {
-    position: absolute;
-    margin-top: 8vh;
-    margin-left: 75vw;
-    height: 14vh;
-    width: 14vh;
-    border-radius: 300px;
-}
-
-.homecircle9 {
-    position: absolute;
-    margin-top: 26vh;
-    margin-left: 82vw;
-    height: 20vh;
-    width: 20vh;
-    border-radius: 300px;
-}
-
-.homecircle10 {
-    position: absolute;
-    margin-top: 8vh;
-    margin-left: 2vw;
-    height: 25vh;
-    width: 25vh;
-    border-radius: 300px;
-}
-
-.homecircle11 {
-    position: absolute;
-    margin-top: 32vh;
-    margin-left: 16vw;
-    height: 13vh;
-    width: 13vh;
-    border-radius: 300px;
-}
-
-.homelogo {
-    margin-top: 3vh;
-    height: 50vh;
+    height: 30vh;
     width: auto;
 }
 
-.homeinformation {
-    margin-top: -5vh;
-    width: 100%;
-}
-
-.homelogoseperator {
-    height: 1vh;
-    width: 80%;
-    background-color: rgba(208,169,51,255);
-}
-
-.homeinformationtext {
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    margin-left: 3vw;
-    margin-right: 3vw;
+.userfullname {
     text-align: center;
+    font-size: 1.8vw;
+    font-weight: bold;
+    margin-bottom: 5vh;
 }
 
-.availabledogscont {
+.userinfocont {
     display: flex;
-    height: fit-content;
-    flex-wrap: wrap;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    width: 100%;
+    border-top: 3px solid rgba(208,169,51,255);
+}
+
+.labelimg {
+    margin-left: 1vw;
+    height: 8vh;
+    width: 4vw;
+}
+
+.userlabel {
+    margin-left: 1.2vw;
+    font-size: 1.2vw;
+}
+
+.userinfo {
+    margin-right: 1.2vw;
+    font-size: 1.2vw;
+}
+
+.adoptionrequest {
+    width: 73%;
+}
+
+.adoptionrequestheader {
+    margin-top: -4vh;
+    margin-left: 1.5vw;
+    display: flex;
     align-content: center;
     justify-content: center;
-    overflow: hidden;  
-    background-color: #d3b04876
-}
-
-.flipfrontimg {
-    height: 100%;
     width: 100%;
 }
 
-.flipbackimg {
-    margin-top: 6vh;
-    margin-bottom: -3vh;
-    height: 11vh;
-    width: auto;
-}
-
-.flip-card {
-    margin: 1em;
-    background-color: transparent;
-    height: 50vh;
-    width: 25vw;
-    perspective: 1000px;
-}
-  
-.flip-card-inner {
+.tile {
+    z-index: -2;
+    margin-top: 4vw;
     position: relative;
+    display: flex;
     width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+    height: 10vh;
 }
-  
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-  
-.flip-card-front, .flip-card-back {
+
+.tilebg {
+    z-index: -1;
+    margin-top: -3vh;
     position: absolute;
     width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    height: 15vh;
 }
-  
-.flip-card-front {
-    background-color: #bbb;
-    color: black;
-}
-  
-.flip-card-back {
+
+.tileseperator {
+    margin-top: -1vh;
+    height: 1vh;
+    width: 100%;
     background-color: rgba(208,169,51,255);
-    color: white;
-    transform: rotateY(180deg);
+}
+
+.tiletitlecont {
+    width: 100%;
+}
+
+.tiletitle {
+    margin-top: 0.5vh;
+    margin-left: 4vw;
+    text-align: left;
+    font-size: 2.5vw;
+    color: rgba(208,169,51,255);
+}
+
+.adoptreqtable {
+    margin-left: 1.5vw;
+    width: 100%;
+    border: 3px solid rgba(208,169,51,255);
+    border-radius: 10px;
+    border-collapse: collapse;
+}
+
+.tblseperator {
+    border-top: 3px solid rgba(208,169,51,255);
+}
+
+.tblsideseperator {
+    border-left: 3px solid rgba(208,169,51,255);
+}
+
+.tableheader {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    font-size: 2vw;
+}
+
+.tablelabels {
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    font-size: 1.2vw;
+    font-weight: bold;
+    color: rgba(208,169,51,255);
+}
+
+.tabledata {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    font-size: 1.4vw;
+}
+
+.dogimage {
+    height: 30vh;
+    width: 15vw;
+    border-radius: 20px;
+}
+
+.tblabel {
+    margin-top: -3vh;
+    font-size: 0.9vw;
+    font-weight: bold;
 }
 
 

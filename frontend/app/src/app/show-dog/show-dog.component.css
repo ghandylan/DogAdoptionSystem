@@ -183,194 +183,218 @@ body {
 
 
 
-.cirleimagescont {
-    position: relative;
-    width: 100%;
-}
-.homecircle1 {
-    position: absolute;
-    margin-top: 19vh;
-    margin-left: 27vw;
-    height: 20vh;
-    width: 20vh;
-    border-radius: 300px;
-}
-
-.homecircle2 {
-    position: absolute;
-    margin-top: 4vh;
-    margin-left: 62vw;
-    height: 10vh;
-    width: 10vh;
-    border-radius: 300px;
-}
-
-.homecircle3 {
-    position: absolute;
-    margin-top: 6vh;
-    margin-left: 18vw;
-    height: 15vh;
-    width: 15vh;
-    border-radius: 300px;
-}
-
-.homecircle4 {
-    position: absolute;
-    margin-top: 25vh;
-    margin-left: 62vw;
-    height: 25vh;
-    width: 25vh;
-    border-radius: 300px;
-}
-
-.homecircle5 {
-    position: absolute;
-    margin-top: 7vh;
-    margin-left: 43vw;
-    height: 11vh;
-    width: 11vh;
-    border-radius: 300px;
-}
-
-.homecircle6 {
-    position: absolute;
-    margin-top: 4vh;
-    margin-left: 88vw;
-    height: 15vh;
-    width: 15vh;
-    border-radius: 300px;
-}
-
-.homecircle7 {
-    position: absolute;
-    margin-top: 4vh;
-    margin-left: 33vw;
-    height: 9vh;
-    width: 9vh;
-    border-radius: 300px;
-}
-
-.homecircle8 {
-    position: absolute;
-    margin-top: 8vh;
-    margin-left: 75vw;
-    height: 14vh;
-    width: 14vh;
-    border-radius: 300px;
-}
-
-.homecircle9 {
-    position: absolute;
-    margin-top: 26vh;
-    margin-left: 82vw;
-    height: 20vh;
-    width: 20vh;
-    border-radius: 300px;
-}
-
-.homecircle10 {
-    position: absolute;
-    margin-top: 8vh;
-    margin-left: 2vw;
-    height: 25vh;
-    width: 25vh;
-    border-radius: 300px;
-}
-
-.homecircle11 {
-    position: absolute;
-    margin-top: 32vh;
-    margin-left: 16vw;
-    height: 13vh;
-    width: 13vh;
-    border-radius: 300px;
-}
-
-.homelogo {
-    margin-top: 3vh;
-    height: 50vh;
-    width: auto;
-}
-
-.homeinformation {
-    margin-top: -5vh;
-    width: 100%;
-}
-
-.homelogoseperator {
-    height: 1vh;
-    width: 80%;
-    background-color: rgba(208,169,51,255);
-}
-
-.homeinformationtext {
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    margin-left: 3vw;
-    margin-right: 3vw;
-    text-align: center;
-}
-
-.availabledogscont {
+.doginformationcont, .dogmedicalcondcont, .dogimagescont, .dogadoptionrequest {
     display: flex;
-    height: fit-content;
-    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    overflow: hidden;  
-    background-color: #d3b04876
-}
-
-.flipfrontimg {
-    height: 100%;
     width: 100%;
 }
 
-.flipbackimg {
-    margin-top: 6vh;
-    margin-bottom: -3vh;
+.tile {
+    z-index: -2;
+    margin-top: 4vw;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 10vh;
+}
+
+.tilebg {
+    z-index: -1;
+    margin-top: -3vh;
+    position: absolute;
+    width: 100%;
+    height: 15vh;
+}
+
+.tileseperator {
+    margin-top: -1vh;
+    height: 1vh;
+    width: 100%;
+    background-color: rgba(208,169,51,255);
+}
+
+.tiletitlecont {
+    width: 100%;
+}
+
+.tiletitle {
+    margin-top: 0.5vh;
+    margin-left: 4vw;
+    text-align: left;
+    font-size: 2.5vw;
+    color: rgba(208,169,51,255);
+}
+
+.doginformationleftcont {
+    width: 40%;
+}
+
+.doginfolbl1 {
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 1.2vw;
+    color: rgba(208,169,51,255);
+}
+
+.doginfotxt1 {
+    z-index: 1;
+    margin-top: -5vh;
+    text-align: center;
+    font-size: 4.5vw;
+    font-weight: bold;
+    color: black;
+}
+
+.doginfolbl2 {
+    text-align: center;
+    font-size: 1.1vw;
+    color: white;
+}
+
+.doginfotxt2 {
+    margin-top: -3vh;
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: white;
+}
+
+.doginfoimage {
+    z-index: -1;
+    margin-top: -15vh;
+    height: 60vh;
+    width: auto;
+    border-radius: 300px;
+}
+
+.doggalleryimage {
+    height: 40vh;
+    width: 25vw;
+}
+
+.dogbullet {
     height: 11vh;
     width: auto;
 }
 
-.flip-card {
-    margin: 1em;
-    background-color: transparent;
-    height: 50vh;
-    width: 25vw;
-    perspective: 1000px;
+.doginformationrightcont {
+    width: 60%;
 }
-  
-.flip-card-inner {
-    position: relative;
+
+.doginforowcont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
+}
+
+.doginfoboxcont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43%;
+    border-radius: 10px;
+}
+
+.medicalcondtable {
+    margin-top: 6vh;
+    width: 80%;
+    border: 3px solid rgba(208,169,51,255);
+    border-radius: 10px;
+    border-collapse: collapse;
+}
+
+.tabledata {
+    width: 50%;
     text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    font-size: 2vw;
+    border: 3px solid rgba(208,169,51,255);
 }
-  
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-  
-.flip-card-front, .flip-card-back {
-    position: absolute;
+
+.adoptionrequestcont {
+    display: flex;
+    align-content: center;
+    justify-content: center;
     width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
 }
-  
-.flip-card-front {
-    background-color: #bbb;
-    color: black;
+
+.adoptionexplanationcont {
+    display: block;
+    width: 60%;
 }
-  
-.flip-card-back {
+
+.adoptionexp {
+    text-align: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-bottom: 2vh;
+}
+
+.adoptionformcont {
+    display: "block";
+    width: 40%;
+}
+
+.adoptionformrow {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 6vh;
+    width: 100%;
+}
+
+.adoptionformlabel {
+    width: 40%;
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(208,169,51,255);
+    border-radius: 30px;
+}
+
+.adoptionformdata {
+    height: 10vh;
+    margin-left: 1.5vw;
+    width: 50%;
+    text-align: center;
+    font-size: 1.5vw;
+    color: rgba(208,169,51,255);
+    border-bottom: 3px solid rgba(208,169,51,255);
+}
+
+.adoptionform {
+    margin-top: 5vh;
+    height: 90%;
+    width: 90%;
+    background-color: rgba(208,169,51,255);
+    border-radius: 50px;
+}
+
+.adoptionformdate {
+    margin-top: 3vh;
+    font-size: 1.5vw;
+    color: rgba(208,169,51,255);
+    border: none;
+}
+
+.adoptionformsubmit {
+    font-size: 1.3vw;
+    height: 8vh;
+    width: 10vw;
+    border-radius: 30px;
+    border: 3px solid rgba(208,169,51,255);
+    background-color: white;
+    color: rgba(208,169,51,255);
+}
+
+.adoptionformsubmit:hover {
+    transition: 0.2s;
     background-color: rgba(208,169,51,255);
     color: white;
-    transform: rotateY(180deg);
 }
 
 
