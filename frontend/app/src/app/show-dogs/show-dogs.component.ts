@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Dog} from "../models/dog";
 import {DogService} from "../services/dog.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-show-dogs',
@@ -10,12 +11,17 @@ import {DogService} from "../services/dog.service";
 export class ShowDogsComponent implements OnInit {
   dogs: Dog[] = [];
 
-  constructor(private dogService: DogService) {
+  constructor(private dogService: DogService, private router: Router) {
+
   }
 
   ngOnInit(): void {
     this.dogService.getDogs().subscribe((data: Dog[]) => {
       this.dogs = data;
     });
+  }
+
+  redirectToProfile() {
+    this.router.navigate(['/profile'])
   }
 }

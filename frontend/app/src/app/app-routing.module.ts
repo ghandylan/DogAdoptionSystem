@@ -8,11 +8,13 @@ import {AdminShowDogsComponent} from "./admin-show-dogs/admin-show-dogs.componen
 import {AdminShowDogComponent} from "./admin-show-dog/admin-show-dog.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dogs', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'dogs', component: ShowDogsComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegistrationComponent},
   { path: 'profile', component: UserProfileComponent},
+
+
   //admin
   { path:'admin/dogs', component: AdminShowDogsComponent},
   { path:'admin/dog/:id', component: AdminShowDogComponent},
