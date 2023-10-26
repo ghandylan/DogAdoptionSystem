@@ -4,7 +4,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        
+
         <div class = "centeredflex vw100">
             <img class = "logo" alt = "Logo" src = "assets/fulllogo.png">
         </div>
@@ -49,29 +49,29 @@
                     <span class="bar"></span>
                     <label>Phone Number</label>
                 </div>
-    
+
                 <div class="minput">
                     <input type="email" id="email" name="email" required>
                     <span class="bar"></span>
                     <label>Email</label>
                 </div>
-    
+
                 <div class="minput">
                     <input type="password" id="password" name="password" required>
                     <span class="bar"></span>
                     <label>Passwrod</label>
                 </div>
-    
+
                 <div class="minput">
                     <input type="password" id="passwordconfirm" name="passwordconfirm" required>
                     <span class="bar"></span>
                     <label>Retype Password</label>
                 </div>
-                
+
                 <div class="minput">
                     <div class = "centeredflex vw100">
                         <input class = "submitbtn vw50" type="submit" id="send" value="Submit">
-                        <button class = "backbtn vw50" onclick="window.location.href='LoginPage'">Cancel</button>
+                        <button class = "backbtn vw50" (click)="redirectToLogin()">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -115,6 +115,6 @@
 
 
 
-        
+
     </body>
 </html> -->

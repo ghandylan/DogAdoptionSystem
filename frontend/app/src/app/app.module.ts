@@ -7,13 +7,17 @@ import { ShowDogsComponent } from './show-dogs/show-dogs.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ShowDogComponent } from './show-dog/show-dog.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import {LoginComponent} from "./login/login.component";
+import {RegistrationComponent} from "./registration/registration.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowDogsComponent,
     ShowDogComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
