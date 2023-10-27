@@ -1,5 +1,10 @@
 import {Component} from '@angular/core';
 import {Router} from "@angular/router";
+import { UserService } from '../services/user.service';
+import { VetService } from '../services/vet.service';
+import { User } from '../models/user';
+import { Vet } from '../models/vet';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -7,32 +12,37 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private router: Router) {
+  constructor(private router: Router, private userService: UserService, private vetService: VetService) {
   }
 
   redirectToRegister() {
     this.router.navigate(['/register'])
   }
 
-  // check if the user credentials are valid like if username == "user" and password == "password"
-  // if valid then redirect to dashboard
-  // else show error message
-
-  username: string = '';
-  password: string = '';
-
-  // Define dummy values for username and password
-  dummyUsername = 'user@gg.com';
-  dummyPassword = 'password';
-
-
-  onSubmit() {
-    // Check if the entered values match the dummy values
-    if (this.username === this.dummyUsername && this.password === this.dummyPassword) {
-      // Redirect to a different page (e.g., dashboard)
-      this.router.navigate(['/dogs']);
-    } else {
-      alert('Login failed. Please check your credentials.');
+  username: string = "";
+  password: string = "";
+  user: User = new User;
+  vet: Vet = new Vet;
+  
+  async onSubmit() {
+    if(this.username.toString().match("@")){
+      this.user = await firstValueFrom(this.userService.loginUser(this.username, this.password))
+      if(this.user.email !== null){
+        this.router.navigate(['/dogs']);
+      }else {
+        alert("Credentials are incorrect!");
+        this.username = "";
+        this.password = "";
+      }
+    }else {
+      this.vet = await firstValueFrom(this.vetService.findVetByUsername(this.username, this.password))
+      if(this.vet.username !== null){
+        this.router.navigate(['/admin/dogs']);
+      }else {
+        alert("Credentials are incorrect!");
+        this.username = "";
+        this.password = "";
+      }
     }
   }
 }

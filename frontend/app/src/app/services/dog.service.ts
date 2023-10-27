@@ -10,7 +10,7 @@ export class DogService {
   appUrl: string;
 
   constructor(private http: HttpClient) {
-    this.appUrl = "http://localhost:18080/api"
+    this.appUrl = "http://localhost:18080"
   }
 
   public getDogs() : Observable<Dog[]> {
@@ -19,8 +19,8 @@ export class DogService {
 
   // TODO: Add a method to get a dog by id
 
-  public getDogById(id: number) {
-    return this.http.get(this.appUrl + "/dogs/" + id.toString());
+  public getDogById(id: Number) {
+    return this.http.get<Dog>(this.appUrl + "/dog/" + id.toString());
   }
 
   public createDog(){
