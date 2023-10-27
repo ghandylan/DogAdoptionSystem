@@ -9,7 +9,6 @@ public class Vet {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    // Primary key
     @Id
     private String username;
     private String password;
