@@ -14,7 +14,7 @@ import { ShowDogComponent } from './show-dog/show-dog.component';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'dogs', component: ShowDogsComponent},
-  { path: 'dog/:id', component: ShowDogComponent},
+  { path: 'dog', component: ShowDogComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegistrationComponent},
   { path: 'profile', component: UserProfileComponent},
