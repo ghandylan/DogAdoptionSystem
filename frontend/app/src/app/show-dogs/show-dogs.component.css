@@ -317,7 +317,7 @@ body {
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    overflow: hidden;  
+    overflow: hidden;
     background-color: #d3b04876
 }
 
@@ -340,7 +340,7 @@ body {
     width: 25vw;
     perspective: 1000px;
 }
-  
+
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -349,11 +349,11 @@ body {
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
-  
+
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
-  
+
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
@@ -361,12 +361,12 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-  
+
 .flip-card-front {
     background-color: #bbb;
     color: black;
 }
-  
+
 .flip-card-back {
     background-color: rgba(208,169,51,255);
     color: white;
@@ -386,11 +386,11 @@ a {
     text-decoration: none;
     color: inherit;
   }
-  
+
   * {
     box-sizing: border-box;
   }
-  
+
   .menu {
     margin-top: 5vh;
     margin-right: 2vw;
@@ -398,7 +398,7 @@ a {
     position: relative;
     cursor: pointer;
   }
-  
+
   .menu-title {
     display: block;
     height: 60px;
@@ -412,7 +412,7 @@ a {
     transition: 0.3s background-color;
     cursor: default;
   }
-  
+
   .menu-title:before {
     content: "";
     display: block;
@@ -429,17 +429,17 @@ a {
       0.2s 0.2s border-top ease-out,
       0.3s border-top-color;
   }
-  
+
   .menu-title:hover { background: black; }
   .menu-title:hover:before { border-top-color: #8db842; }
-  
+
   .menu:hover > .menu-title:before {
     border-top-width: 0;
     transition:
       0.2s border-top-width ease-in,
       0.3s border-top-color;
   }
-  
+
   .menu-title:after {
     content: "";
     display: block;
@@ -453,12 +453,12 @@ a {
     z-index: 101;
     transition: 0.2s border-bottom ease-in;
   }
-  
+
   .menu:hover > .menu-title:after {
     border-bottom-width: 5px;
     transition: 0.2s 0.2s border-bottom-width ease-out;
   }
-  
+
   .menu-dropdown {
     text-align: center;
     margin-top: 0vh;
@@ -471,7 +471,7 @@ a {
       0.5s padding,
       0.5s background;
   }
-  
+
   .menu-dropdown:after {
     content: "";
     display: block;
@@ -485,39 +485,39 @@ a {
     z-index: 101;
     transition: 0.5s border-top;
   }
-  
+
   .menu:not(:hover) > .menu-dropdown {
     padding: 4px 0;
     background: #dddddd;
     z-index: 99;
   }
-  
+
   .menu:not(:hover) > .menu-dropdown:after {
     border-top-color: #dddddd;
   }
-  
+
   .menu:not(:hover) > .menu-title:after {
     border-bottom-color: #dddddd;
   }
-  
+
   .menu-dropdown > * {
     overflow: hidden;
     height: 30px;
     padding: 5px 10px;
     background: rgba(0,0,0,0);
     white-space: nowrap;
-    transition: 
+    transition:
       0.5s height cubic-bezier(.73,.32,.34,1.5),
       0.5s padding cubic-bezier(.73,.32,.34,1.5),
       0.5s margin cubic-bezier(.73,.32,.34,1.5),
       0.5s 0.2s color,
       0.2s background-color;
   }
-  
+
   .menu-dropdown > *:hover {
     background: rgba(0,0,0,0.1);
   }
-  
+
   .menu:not(:hover) > .menu-dropdown > * {
     visibility: hidden;
     height: 0;
@@ -525,7 +525,7 @@ a {
     padding-bottom: 0;
     margin: 0;
     color: rgba(25,25,25,0);
-    transition: 
+    transition:
       0.5s 0.1s height,
       0.5s 0.1s padding,
       0.5s 0.1s margin,
@@ -533,11 +533,11 @@ a {
       0.6s visibility;
     z-index: 99;
   }
-  
+
   .hList > * {
     float: left;
   }
-  
+
   .hList > * + * {
     margin-left: 0;
   }

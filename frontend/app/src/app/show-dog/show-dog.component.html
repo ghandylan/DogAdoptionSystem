@@ -1,57 +1,242 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-    <div class="container-fluid">
-        <!-- Topbar -->
-        <div class="row py-3 px-lg-5">
-            <div class="col-lg-4">
-                <a href="" class="navbar-brand d-none d-lg-block">
-                    <h1 class="m-0 display-5 text-capitalize"><span class="text-primary">ADMIN || Saving Abused </span>and Neglected Animals</h1>
-                </a>
-            </div>
-            <div class="col-lg-8 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <!-- Add topbar content here -->
-                </div>
-            </div>
-        </div>
-        <!-- Navbar -->
-        <div class="container-fluid p-0">
-            <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                    <div class="navbar-nav mr-auto py-0">
-                        <a href="/adminhome" class="nav-item nav-link active">Home</a>
-                        <a href="/adminadoptionportal" class="nav-item nav-link">Adoption Portal</a>
-                    </div>
-                    <a href="/logout" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Logout</a>
-                </div>
-            </nav>
-        </div>
-        <!-- Main Content -->
-        <main class="container mt-5">
-            <h1>Dog</h1>
-                <form>
-                    Dog id: <input type="text" name="id" value="{{dog.id}}"/> <br>
-                    Dog name: <input type="text" name="name" value="{{dog.name}}"/> <br>
-                    Dog age: <input type="text" name="age" value="{{dog.age}}"/><br>
-                    Dog breed: <input type="text" name="breed" value="{{dog.breed}}"/><br>
-                    Dog picture: <input type="text" name="picture" value="{{dog.picture}}"/><br>
-                    Dog height: <input type="text" name="height" value="{{dog.height}}"/><br>
-                    Dog weight: <input type="text" name="weight" value="{{dog.weight}}"/><br>
-                <!-- Add other dog-related fields here -->
-                <th>Name</th>
-                <th>Age</th>
-                <th>Breed</th>
-                <th>Picture</th>
-                <th>Height</th>
-                <th>Weight</th>
+<div class = "header">
+  <img class = "headerbg" alt = "Header Background Image" src = "assets/tilesbg.png">
+  <img class = "fulllogo" alt = "Logo" src = "assets/fulllogo.png">
+  <div class = "headertitlecont">
+    <h1 class = "headertitle">Dog Record</h1>
+  </div>
+  <ul class="hList">
+    <li>
+      <a href="#click" class="menu">
+        <img class="menu-title" alt = "Menu Icon" src = "assets/menu.png">
+        <ul class="menu-dropdown">
+          <li>View All</li>
+          <li>Profile</li>
+          <li>Log Out</li>
+        </ul>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class = "headerseperator"><br></div>
 
-                </form>
-        </main>
+<div class = "doginformationcont">
+  <div class = "block vw80">
+    <div class = "tile">
+      <img class = "tilebg" alt = "Header Background Image" src = "assets/tilesbg.png">
+      <div class = "tiletitlecont">
+        <h1 class = "tiletitle">Dog Information</h1>
+      </div>
     </div>
-    <script>
-        // Add your JavaScript logic here
-    </script>
+    <div class = "tileseperator"><br></div>
+
+    <div class = "centeredflex">
+      <div class = "doginformationleftcont">
+        <p class = "doginfolbl1">DOG NAME:</p>
+        <p class = "doginfotxt1">BAD BITCH</p>
+        <div class = "centeredflex">
+          <img class = "doginfoimage" alt = "Dog Image" src = "assets/sampledog.png">
+        </div>
+      </div>
+
+      <div class = "doginformationrightcont">
+        <div class = "doginforowcont">
+
+          <div class = "doginfoboxcont gold left1 top3">
+            <div class = "flex">
+              <div class = "centeredflex vw40">
+                <img class = "dogbullet" alt = "Dog Bullet" src = "assets/bullet.png">
+              </div>
+              <div class = "centeredflex vw60">
+                <div class = "block">
+                  <p class = "doginfolbl2">Age:</p>
+                  <p class = "doginfotxt2">3 years old</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class = "doginfoboxcont black left3 top3">
+            <div class = "flex">
+              <div class = "centeredflex vw40">
+                <img class = "dogbullet" alt = "Dog Bullet" src = "assets/bullet.png">
+              </div>
+              <div class = "centeredflex vw60">
+                <div class = "block">
+                  <p class = "doginfolbl2">Birthday:</p>
+                  <p class = "doginfotxt2">09/17/2002</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class = "doginforowcont">
+          <div class = "doginfoboxcont black left1 top7">
+            <div class = "flex">
+              <div class = "centeredflex vw40">
+                <img class = "dogbullet" alt = "Dog Bullet" src = "assets/bullet.png">
+              </div>
+              <div class = "centeredflex vw60">
+                <div class = "block">
+                  <p class = "doginfolbl2">Gender:</p>
+                  <p class = "doginfotxt2">Female</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class = "doginfoboxcont gold left3 top7">
+            <div class = "flex">
+              <div class = "centeredflex vw40">
+                <img class = "dogbullet" alt = "Dog Bullet" src = "assets/bullet.png">
+              </div>
+              <div class = "centeredflex vw60">
+                <div class = "block">
+                  <p class = "doginfolbl2">Breed:</p>
+                  <p class = "doginfotxt2">Golden Retriever</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class = "doginforowcont">
+          <div class = "doginfoboxcont gold left1 top7">
+            <div class = "flex">
+              <div class = "centeredflex vw40">
+                <img class = "dogbullet" alt = "Dog Bullet" src = "assets/bullet.png">
+              </div>
+              <div class = "centeredflex vw60">
+                <div class = "block">
+                  <p class = "doginfolbl2">Height:</p>
+                  <p class = "doginfotxt2">8 inches</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class = "doginfoboxcont black left3 top7">
+            <div class = "flex">
+              <div class = "centeredflex vw40">
+                <img class = "dogbullet" alt = "Dog Bullet" src = "assets/bullet.png">
+              </div>
+              <div class = "centeredflex vw60">
+                <div class = "block">
+                  <p class = "doginfolbl2">Weight:</p>
+                  <p class = "doginfotxt2">30 kilograms</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class = "dogmedicalcondcont top5">
+  <div class = "block vw80">
+    <div class = "tile">
+      <img class = "tilebg" alt = "Header Background Image" src = "assets/tilesbg.png">
+      <div class = "tiletitlecont">
+        <h1 class = "tiletitle">Medical Conditions</h1>
+      </div>
+    </div>
+    <div class = "tileseperator"><br></div>
+    <div class = "centeredflex">
+      <table class = "medicalcondtable">
+        <tr>
+          <td class = "tabledata">Allergies:</td>
+          <td class = "tabledata">None</td>
+        </tr>
+        <tr>
+          <td class = "tabledata">Existing Conditions:</td>
+          <td class = "tabledata">None</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class = "dogimagescont top5">
+  <div class = "block vw80">
+    <div class = "tile">
+      <img class = "tilebg" alt = "Header Background Image" src = "assets/tilesbg.png">
+      <div class = "tiletitlecont">
+        <h1 class = "tiletitle">Picture Gallery</h1>
+      </div>
+    </div>
+    <div class = "tileseperator"><br></div>
+    <div class = "dogimages centeredflex gold">
+      <div class = "dogimgcont">
+        <img class = "doggalleryimage" alt = "Dog Gallery 1" src = "assets/sampledog2.jpg">
+      </div>
+      <div class = "dogimgcont">
+        <img class = "doggalleryimage left1" alt = "Dog Gallery 2" src = "assets/sampledog3.jpg">
+      </div>
+      <div class = "dogimgcont">
+        <img class = "doggalleryimage left1" alt = "Dog Gallery 3" src = "assets/sampledog4.jpeg">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class = "dogadoptionrequest vw 90 top5">
+  <div class = "block vw90">
+    <div class = "tile">
+      <img class = "tilebg" alt = "Header Background Image" src = "assets/tilesbg.png">
+      <div class = "tiletitlecont">
+        <h1 class = "tiletitle">Adoption Form</h1>
+      </div>
+    </div>
+    <div class = "tileseperator"><br></div>
+    <div class = "border">
+      <div class = "adoptionrequestcont">
+        <div class = "adoptionexplanationcont">
+          <img class = "adoptionimg" alt = "Adoption Icon" src = "assets/logo.png">
+          <p class = "adoptionexp">Adopting a dog is a big responsibility. It requires commitment that you will take care of the dog for the
+            rest of its life. You will have to take into consideration the time, effort, and cost that comes with
+            adopting. If you are ready to adopt, please fill out the form on the right.</p>
+        </div>
+        <div class = "adoptionformcont">
+          <div class = "adoptionformrow">
+            <div class = "adoptionformlabel">
+              <p>Adopter Name:</p>
+            </div>
+            <div class = "adoptionformdata">
+              <p>Harold Visperas</p>
+            </div>
+          </div>
+          <div class = "adoptionformrow">
+            <div class = "adoptionformlabel">
+              <p>Dog Name:</p>
+            </div>
+            <div class = "adoptionformdata">
+              <p>Bad Bitch</p>
+            </div>
+          </div>
+          <div class = "adoptionformrow">
+            <div class = "adoptionformlabel">
+              <p>Visit Date:</p>
+            </div>
+            <div class = "adoptionformdata">
+              <input class = "adoptionformdate" type="date" id = "visitDate" name="visitDate" required/>
+            </div>
+          </div>
+          <div class = "centeredflex vw100 top5">
+            <input class = "adoptionformsubmit" type = "submit" value = "Submit">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = "footer"></div>
+  </div>
+</div>
 </body>
+</html>
