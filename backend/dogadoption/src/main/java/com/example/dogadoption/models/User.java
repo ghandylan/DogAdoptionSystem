@@ -1,5 +1,7 @@
 package com.example.dogadoption.models;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -130,4 +132,7 @@ public class User {
                 ", dateAndTimeCreated='" + dateAndTimeCreated + '\'' +
                 '}';
     }
+
+
+
 }
