@@ -6,6 +6,7 @@ import {UserProfileComponent} from "./user-profile/user-profile.component";
 import {RegistrationComponent} from "./registration/registration.component";
 import {AdminShowDogsComponent} from "./admin-show-dogs/admin-show-dogs.component";
 import {AdminShowDogComponent} from "./admin-show-dog/admin-show-dog.component";
+import { AdminDatabaseComponent } from './admin-database/admin-database.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -18,6 +19,8 @@ const routes: Routes = [
   //admin
   { path:'admin/dogs', component: AdminShowDogsComponent},
   { path:'admin/dog/:id', component: AdminShowDogComponent},
+  { path: 'admindatabase', component: AdminDatabaseComponent}
+
 
 
   // {pending}

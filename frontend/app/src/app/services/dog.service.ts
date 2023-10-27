@@ -10,7 +10,7 @@ export class DogService {
   appUrl: string;
 
   constructor(private http: HttpClient) {
-    this.appUrl = "http://localhost:8080/"
+    this.appUrl = "http://localhost:18080"
   }
 
   public getDogs() : Observable<Dog[]> {
@@ -19,7 +19,19 @@ export class DogService {
 
   // TODO: Add a method to get a dog by id
 
-  public getDogById(id: number) {
-    return this.http.get(this.appUrl + "dogs/" + id.toString());
+  public getDogById(id: Number) {
+    return this.http.get<Dog>(this.appUrl + "/dog/" + id.toString());
+  }
+
+  public createDog(){
+    return this.http.get(this.appUrl+ "/dog");
+  }
+
+  public updateDog(id: Number){
+    return this.http.get(this.appUrl + "/dog/update/" + id.toString());
+  }
+
+  public deleteDog(id: Number){
+    return this.http.get(this.appUrl + "/dog/" + id.toString());
   }
 }
