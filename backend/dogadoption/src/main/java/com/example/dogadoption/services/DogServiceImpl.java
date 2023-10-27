@@ -27,12 +27,12 @@ public class DogServiceImpl implements DogService {
     }
 
     @Override
-    public void addDog(Dog dog) {
-        dogRepository.save(dog);
+    public Dog addDog(Dog dog) {
+        return dogRepository.save(dog);
     }
 
     @Override
-    public void updateDog(Long id, Dog dog) {
+    public Dog updateDog(Long id, Dog dog) {
         // Store the dog in placeholder variable based on id
         Optional<Dog> placeholder = dogRepository.findById(id);
         // if there is a dog with that id, update the dog and save it
@@ -47,10 +47,11 @@ public class DogServiceImpl implements DogService {
             updatedDog.setHeight(dog.getHeight());
             updatedDog.setWeight(dog.getWeight());
             updatedDog.setMedicalConditions(dog.getMedicalConditions());
-            dogRepository.save(updatedDog);
+            return dogRepository.save(updatedDog);
         }
         // if there is no dog with that id, return null
         else {
+            return null;
         }
     }
 
