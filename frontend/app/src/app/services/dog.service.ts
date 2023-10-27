@@ -14,7 +14,7 @@ export class DogService {
   }
 
   public getDogs() : Observable<Dog[]> {
-    return this.http.get<Dog[]>(this.appUrl + "dogs");
+    return this.http.get<Dog[]>(this.appUrl + "/dogs");
   }
 
   // TODO: Add a method to get a dog by id
