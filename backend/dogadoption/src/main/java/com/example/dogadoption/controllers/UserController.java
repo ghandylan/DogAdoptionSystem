@@ -16,15 +16,15 @@ public class UserController {
     @RequestMapping(value = "/user/create")
     public User createUser(@RequestBody User user){return  userService.addUser(user);}
     @RequestMapping(value = "/user/{id}")
-    public Optional<User> findUserById(@PathVariable Long id){
+    public Optional<User> findUserById(@PathVariable String id){
         return (Optional<User>) userService.findUserById(id);
     }
     @RequestMapping(value = "/user/{id}/update")
-    public User updateUser(@RequestBody User user, @PathVariable Long id){
+    public User updateUser(@RequestBody User user, @PathVariable String id){
         return userService.updateUser(id, user);
     }
     @RequestMapping(value = "/user/{id}/delete")
-    public void deleteUser(@PathVariable Long id){
+    public void deleteUser(@PathVariable String id){
         userService.deleteUser(id);
     }
 }

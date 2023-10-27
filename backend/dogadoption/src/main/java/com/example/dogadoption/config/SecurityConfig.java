@@ -15,6 +15,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity security) throws Exception
     {
         security.httpBasic().disable().formLogin().disable();
+        security.authorizeRequests().anyRequest().permitAll();
+        security.csrf().disable();
     }
 
     @Bean
