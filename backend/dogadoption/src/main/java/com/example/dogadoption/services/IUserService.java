@@ -20,25 +20,25 @@ public class IUserService implements UserService {
     public User addUser(User user) {return userRepository.save(user);}
 
     @Override
-    public User updateUser(String username, User user) {
-        if (userRepository.existsById(username)){
+    public User updateUser(String id, User user) {
+        if (userRepository.existsById(id)){
             return userRepository.save(user);
         }else {
             return null;
         }
     }
     @Override
-    public Optional<User> findUserById(String username){
-        if(userRepository.existsById(username)){
-            return (Optional<User>) userRepository.findById(username);
+    public Optional<User> findUserById(String id){
+        if(userRepository.existsById(id)){
+            return (Optional<User>) userRepository.findById(id);
         }else {
             return Optional.empty();
         }
     }
     @Override
-    public void deleteUser(String username){
-        if(userRepository.existsById(username)) {
-            userRepository.deleteById(username);
+    public void deleteUser(String id){
+        if(userRepository.existsById(id)) {
+            userRepository.deleteById(id);
         } else {
             System.out.println("User Deleted");
         }
