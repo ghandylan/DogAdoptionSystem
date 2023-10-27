@@ -13,19 +13,9 @@ public class VetController {
     public VetController(VetService vetService) {
         this.vetService = vetService;
     }
-    @RequestMapping(value = "/vet/{username}/{password}")
-    public Optional<Vet> findVetById(@PathVariable String username, @PathVariable String password){
-        Optional<Vet> placeholder = vetService.findVetUsername(username);
-        if(placeholder.isPresent()){
-            Vet vetAccount = placeholder.get();
-            if(vetAccount.getPassword().equals(password)){
-                return placeholder;
-            }else{
-                return Optional.of(new Vet());
-            }
-        }else{
-            return Optional.of(new Vet());
-        }
+    @RequestMapping(value = "/vet/{username}")
+    public Optional<Vet> findVetById(@PathVariable String username){
+        return vetService.findVetUsername(username);
     }
     @RequestMapping(value = "vet/create")
     public Vet createVet(@RequestBody Vet vet){

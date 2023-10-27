@@ -16,10 +16,8 @@ export class ShowDogsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("dog started")
     this.dogService.getDogs().subscribe((data: Dog[]) => {
       this.dogs = data;
-      console.log("\n\n\nData: " + data);
     });
   }
 

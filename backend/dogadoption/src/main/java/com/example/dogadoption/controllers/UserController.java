@@ -15,19 +15,9 @@ public class UserController {
     }
     @RequestMapping(value = "/user/create")
     public User createUser(@RequestBody User user){return  userService.addUser(user);}
-    @RequestMapping(value = "/user/{id}/{password}")
-    public Optional<User> findUserById(@PathVariable String id, @PathVariable String password){
-        Optional<User> placeholder = userService.findUserById(id);
-        if(placeholder.isPresent()){
-            User userAccount = placeholder.get();
-            if (userAccount.getPassword().equals(password)) {
-                return placeholder;
-            }else {
-                return Optional.of(new User());
-            }
-        }else {
-            return Optional.of(new User());
-        }
+    @RequestMapping(value = "/user/{id}")
+    public Optional<User> findUserById(@PathVariable String id){
+        return (Optional<User>) userService.findUserById(id);
     }
     @RequestMapping(value = "/user/{id}/update")
     public User updateUser(@RequestBody User user, @PathVariable String id){
