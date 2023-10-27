@@ -4,37 +4,37 @@
 
 <div class="admin">
     <h2>Admin Dashboard</h2>
-  
+
     <!-- Add New Dog Section -->
     <div class="add-dog-section">
       <h3>Add New Dog</h3>
-      <form>
+      <form (ngSubmit)="onSubmit()"  enctype="multipart/form-data">
         <div class="form-group">
-          <input [(ngModel)]="newDog.name" name="newDog.name" class="form-control" placeholder="Name" required>
+          <input [(ngModel)]="dog.name" name="newDog.name" class="form-control" placeholder="Name" required>
         </div>
         <div class="form-group">
-          <input type="date" [(ngModel)]="newDog.dateOfBirth" name="newDog.dateOfBirth" class="form-control" placeholder="date Of Birth" required>
+          <input type="date" [(ngModel)]="dog.dateOfBirth" name="newDog.dateOfBirth" class="form-control" placeholder="date Of Birth" required>
         </div>
         <div class="form-group">
-          <input [(ngModel)]="newDog.gender" name="newDog.gender" class="form-control" placeholder="gender" required>
+          <input [(ngModel)]="dog.gender" name="newDog.gender" class="form-control" placeholder="gender" required>
         </div>
         <div class="form-group">
-          <input [(ngModel)]="newDog.breed" name="newDog.breed" class="form-control" placeholder="Breed" required>
+          <input [(ngModel)]="dog.breed" name="newDog.breed" class="form-control" placeholder="Breed" required>
         </div>
-        <input type="file" accept="image/png, image/jpeg, image/img" name="newDog.picture"  [(ngModel)]="newDog.picture" class="form-control" placeholder="Picture" required>
+        <input type="file" accept="image/png, image/jpeg, image/img" name="newDog.picture"   class="form-control" placeholder="Picture" (change)="onFileChange($event)" required>
         <div class="form-group">
-          <input [(ngModel)]="newDog.height" name="newDog.height" class="form-control" placeholder="Height" required>
-        </div>
-        <div class="form-group">
-          <input [(ngModel)]="newDog.weight" name="newDog.weight" class="form-control" placeholder="Weight" required>
+          <input [(ngModel)]="dog.height" name="newDog.height" class="form-control" placeholder="Height" required>
         </div>
         <div class="form-group">
-          <input [(ngModel)]="newDog.medicalConditions" name="newDog.medicalConditions" class="form-control" placeholder="medicalConditions" required>
+          <input [(ngModel)]="dog.weight" name="newDog.weight" class="form-control" placeholder="Weight" required>
         </div>
-        <button type="submit" (click)="onSubmit('addDog')" class="btn btn-primary">Add</button>
+        <div class="form-group">
+          <input [(ngModel)]="dog.medicalConditions" name="newDog.medicalConditions" class="form-control" placeholder="medicalConditions" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
       </form>
     </div>
-  
+
     <!-- Display Dogs Table -->
     <div class="dogs-table">
       <h3>Dogs</h3>
@@ -55,7 +55,7 @@
             <td>{{dog.name}}</td>
             <td>{{dog.age}}</td>
             <td>{{dog.breed}}</td>
-            <td><img src="{{dog.picture}}" alt="Dog Picture"></td>
+            <td><img src="data:image/png;base64,{{dog.picture}}" alt="Dog Picture"></td>
             <td>{{dog.height}}</td>
             <td>{{dog.weight}}</td>
             <td>
@@ -94,7 +94,7 @@
         <div class="form-group">
           <input [(ngModel)]="selectedDog.medicalConditions" name="selectedDog.medicalConditions" class="form-control" placeholder="Medical Conditions" required>
         </div>
-        <button type="submit" (click)="onSubmit('editDog')" class="btn btn-primary">Update</button>
+<!--        <button type="submit" (click)="onSubmit('editDog')" class="btn btn-primary">Update</button>-->
       </form>
     </div>
   </div>
