@@ -1,88 +1,63 @@
- <!-- Navigation Bar -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="show-dog.component (1).css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class = "header">
+            <img class = "headerbg" alt = "Header Background Image" src = "assets/tilesbg.png">
+            <img class = "fulllogo" alt = "Logo" src = "assets/fulllogo.png">
+            <div class = "headertitlecont">
+                <h1 class = "headertitle">User Profile</h1>
+            </div>
+            <ul class="hList">
+                <li>
+                  <a class="menu">
+                    <img class="menu-title" alt = "Menu Icon" src = "assets/menu.png">
+                    <ul class="menu-dropdown">
+                      <li (click)="redirectToAlldogs()">View All</li>
+                      <li (click)="redirectToProfile()" >Profile</li>
+                      <li (click)="logout()" >Log Out</li>
+                    </ul>
+                  </a>
+                </li>
+            </ul>
+        </div>
 
- <ul class="hList">
-  <li>
-    <a href="#click" class="menu">
-      <img class="menu-title" alt = "Menu Icon" src = "assets/menu.png">
-      <ul class="menu-dropdown">
-        <li>View All</li>
-        <li>Profile</li>
-        <li>Log Out</li>
-      </ul>
-    </a>
-  </li>
-</ul>
-
-
-<nav class="admin-navbar">
-<ul>    
-<li><a routerLink="/app/src/app/admin-database">Database</a></li>
-  <li><a routerLink="/app/src/app/admin-show-dogs">Show Dogs</a></li>
-  <li><a routerLink="/app/src/app/admin-show-dog">Show Dog</a></li>
-</ul>
-</nav>
-
-
-<!doctype html>
-<html lang="en">
-<head>
-  <title>Dogs</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  
-</head>
-<body>
-   
+        <div class="topnav">
+          <a (click)="XXXXX">Add Dog</a>
+          <a (click)="XXXXX">Edit Dog</a>
+          <a (click)="XXXXX">Show Dog</a>
+        </div>
 
 
-  <section class="dogs">
-    <div class="dog-content">
-        <h1>Welcome to Our Dog Adoption Center</h1>
-        <p>Find your furry friend today!</p>
-    </div>
-</section>
-  
-<table class="dog-table">
-  <thead>
-    <tr>
-      <th>Requestee Name</th>
-      <th>Dog Name</th>
-            <th>Date and Time Created</th>
-            <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let adoption of adoptions">
-  <td>{{adoption.name}}</td>
-  <td>{{adoption.dogName}}</td>
-  <td>{{adoption.dateAndTimeCreated}}</td>
-  <td>{{adoption.status}}</td>
-  <td>
-    <button (click)="acceptAdoption(adoption)">Accept</button>
-    <button (click)="rejectAdoption(adoption)">Reject</button>
-  </td>
-  </tr>
-</tbody>
-</table>
-
-  
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-          crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-          crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-          crossorigin="anonymous"></script>
-  
-        
-  </body>
-</html>
+        <table class="admintable">
+          <thead>
+            <tr>
+              <th class = "tableheader" colspan = 5>Pending Adoption Requests</th>
+            </tr>
+            <tr>
+              <th class = "noborder tablelabels vw25">Adoptee Name</th>
+              <th class = "noborder tablelabels vw25">Dog Name</th>
+              <th class = "noborder tablelabels vw10">Date and Time Created</th>
+              <th class = "noborder tablelabels vw10">Status</th>
+              <th class = "bottomborder tablelabels vw30">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let adoption of adoptions">
+              <td>{{adoption.name}}</td>
+              <td>{{adoption.dogName}}</td>
+              <td>{{adoption.dateAndTimeCreated}}</td>
+              <td>{{adoption.status}}</td>
+              <td class = "centeredflex noborder">
+                <button class = "btn1" (click)="acceptAdoption(adoption.status)">Accept</button>
+                <button class = "btn2" (click)="rejectAdoption(adoption.status)">Reject</button>
+                <button class = "btn2" (click)="pendingAdoption(adoption.status)">Pending</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </body>
+  </html>
