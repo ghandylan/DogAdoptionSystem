@@ -38,6 +38,7 @@ export class AdminDatabaseComponent implements OnInit {
   dog: Dog = new Dog();
   newDog: Dog = new Dog();
 
+
   onSubmit(type: String) {
     if (type == "add"){
       // Append other form data and send the request
@@ -50,12 +51,11 @@ export class AdminDatabaseComponent implements OnInit {
     this.formData.append('weight', this.dog.weight);
     this.formData.append('medicalConditions', this.dog.medicalConditions);
 
+    // set response type to form data
+
     this.dogservice.createDog(this.formData).subscribe(
         (response) => {
-          console.log('Dog saved successfully', response);
-        },
-        (error) => {
-          console.error('Dog not saved', error);
+          console.log(response);
         }
     );
     }else {
