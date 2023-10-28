@@ -1,9 +1,31 @@
-<!doctype html>
-<html lang="en">
-<body>
+<!DOCTYPE html>
+<html>
+    <head>
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class = "header">
+            <img class = "headerbg" alt = "Header Background Image" src = "assets/tilesbg.png">
+            <img class = "fulllogo" alt = "Logo" src = "assets/fulllogo.png">
+            <div class = "headertitlecont">
+                <h1 class = "headertitle">Admin Dashboard</h1>
+            </div>
+            <ul class="hList">
+                <li>
+                  <a class="menu">
+                    <img class="menu-title" alt = "Menu Icon" src = "assets/menu.png">
+                    <ul class="menu-dropdown">
+                      <li (click)="XXXX">Dog List</li>
+                      <li (click)="XXXXX" >Requests</li>
+                      <li (click)="logout()" >Log Out</li>
+                    </ul>
+                  </a>
+                </li>
+            </ul>
+        </div>
+        <div class = "headerseperator"><br></div>
 
-<div class="admin">
-    <h2>Admin Dashboard</h2>
+    <div class="admin">
 
     <!-- Edit Dog Section -->
     <div class="edit-dog-section">
