@@ -15,9 +15,9 @@
                   <a class="menu">
                     <img class="menu-title" alt = "Menu Icon" src = "assets/menu.png">
                     <ul class="menu-dropdown">
-                      <li (click)="XXXX">Dog List</li>
-                      <li (click)="XXXXX" >Requests</li>
-                      <li (click)="logout()" >Log Out</li>
+                      <li >Dog List</li>
+                      <li >Requests</li>
+                      <li >Log Out</li>
                     </ul>
                   </a>
                 </li>
@@ -51,9 +51,8 @@
               <td>{{adoption.dateAndTimeCreated}}</td>
               <td>{{adoption.status}}</td>
               <td class = "centeredflex noborder">
-                <button class = "btn1" (click)="acceptAdoption(adoption.status)">Accept</button>
-                <button class = "btn2" (click)="rejectAdoption(adoption.status)">Reject</button>
-                <button class = "btn2" (click)="pendingAdoption(adoption.status)">Pending</button>
+                <button class = "btn1" (click)="acceptAdoption(adoption)">Accept</button>
+                <button class = "btn2" (click)="rejectAdoption(adoption)">Reject</button>
               </td>
             </tr>
           </tbody>

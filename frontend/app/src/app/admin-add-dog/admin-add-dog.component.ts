@@ -39,8 +39,6 @@ export class AdminAddDogComponent {
     this.formData.append('weight', this.newDog.weight.toString());
     this.formData.append('medicalConditions', this.newDog.medicalConditions);
 
-    console.log(this.formData)
-      window.location.reload();
 
     // set response type to form data
 
@@ -49,8 +47,6 @@ export class AdminAddDogComponent {
           console.log(response);
         }
     );
-    }else {
-      //update dog
     }
 
   }
