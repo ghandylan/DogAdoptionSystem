@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .border {
     outline: none;
     border: none;
@@ -53,6 +57,7 @@
     width: 15%;
     height: 7vh;
     margin-top: 5vh;
+    cursor: pointer ;
 }
 
 .submitbtn:hover {
@@ -67,6 +72,7 @@
     color: rgba(208,169,51,255);
     font-size: 1.2em;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .animate-label {
@@ -84,6 +90,7 @@
     font-size: 2em;
     width: 50%;
     color: #888888;
+    cursor: text
   }
   
   .animate-label input:valid + label,

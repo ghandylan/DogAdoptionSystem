@@ -26,6 +26,14 @@ body {
     background-color: #eac351;
 }
 
+.back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10vh;
+}
+
 .backbtn {
     max-width: 125px;
     cursor: pointer;

@@ -63,11 +63,10 @@
   </div>
 </div>
 
-<div class="availabledogscont" *ngFor="let dog of dogs">
+<div class="availabledogscont">
 
-  <!-- ngFor something------------------------------------------------------------- -->
-  <div class="flip-card">
-    <a (click)="showFullDog(dog.id)">
+  <div class="flip-card" *ngFor="let dog of dogs">
+    <a (click)="showFullDog(dog.id)" >
       <div class="flip-card-inner">
 
 
