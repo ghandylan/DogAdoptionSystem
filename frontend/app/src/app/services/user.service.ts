@@ -8,21 +8,8 @@ import { Observable, lastValueFrom } from 'rxjs';
 })
 export class UserService {
   appUrl: string;
-  userLoggedIn: User = new User();
   constructor(private http: HttpClient) {
     this.appUrl = "http://localhost:18080";
-  }
-
-  setUserLoggedIn(user: User){
-    this.userLoggedIn = user;
-  }
-
-  getUserLoggedIn(){
-    return this.userLoggedIn;
-  }
-
-  logoutUser(){
-    this.userLoggedIn = new User;
   }
 
   public createUser(user: User){
@@ -47,4 +34,5 @@ export class UserService {
   public deleteUser(email: String) {
     return this.http.get(this.appUrl + "/user/" + email.toString() + "/delete")
   }
+
 }
