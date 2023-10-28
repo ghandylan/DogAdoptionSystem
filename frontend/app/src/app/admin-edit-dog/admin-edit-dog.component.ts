@@ -56,7 +56,9 @@ export class AdminEditDogComponent {
         this.dogservice.updateDog(this.newDog.id, this.formData).subscribe(
             (response) => {
                 console.log(response);
-                window.location.reload();
+                // redirect to the list of dogs
+                this.router.navigate(['/admin/dogs/add']);
+
                 // Handle the response (e.g., show a success message, navigate to a different page)
             }
         );
@@ -72,12 +74,11 @@ export class AdminEditDogComponent {
 
     editDog(id: Number) {
         this.router.navigate(['/admin/dogs/edit/' + id]);
-        window.location.reload();
     }
 
     deleteDog(id: number) {
         this.dogservice.deleteDog(id).subscribe();
-        window.location.reload();
+        this.router.navigate(['/admin/dogs']);
         alert("Your dog has been removed to the list :(");
     }
 }

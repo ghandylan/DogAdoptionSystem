@@ -36,16 +36,17 @@
             <div class="form-group">
                 <label for="dogName">Dog Picture:</label>
                 <input type="file" accept="image/png, image/jpeg, image/img" name="selectedDog.picture"
-                        class="form-control" style="width: 30px;" placeholder="Picture"
-                       (change)="onFileChange($event)" [(ngModel)]="newDog.picture">
+                       (change)="onFileChange($event)" class="form-control" style="width: 30px;" required>
+                <p *ngIf="newDog.picture">{{newDog.picture.name}}</p>
             </div>
+
             <div class="form-group">
                 <label for="dogName">Height:</label>
-                <input name="selectedDog.height" [(ngModel)]="newDog.height" class="form-control" placeholder="Height">
+                <input type="number" name="selectedDog.height" [(ngModel)]="newDog.height" class="form-control" placeholder="Height">
             </div>
             <div class="form-group">
                 <label for="dogName">Weight:</label>
-                <input name="selectedDog.weight" [(ngModel)]="newDog.weight" class="form-control" placeholder="Weight">
+                <input type="number" name="selectedDog.weight" [(ngModel)]="newDog.weight" class="form-control" placeholder="Weight">
             </div>
             <div class="form-group">
                 <label for="dogName">Medical Condition:</label>
@@ -53,6 +54,7 @@
                        placeholder="Medical Conditions" required>
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-danger"><a href="/admin/dogs/add">Cancel</a></button>
         </form>
     </div>
 
