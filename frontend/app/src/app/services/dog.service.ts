@@ -24,7 +24,7 @@ export class DogService {
   public createDog(formData:FormData): Observable<any> {
     // Create a FormData object
 
-    return this.http.post(this.appUrl + "/dog", formData);
+    return this.http.post<Dog>(this.appUrl + "/dog", formData);
   }
 
   public updateDog(id: Number){
