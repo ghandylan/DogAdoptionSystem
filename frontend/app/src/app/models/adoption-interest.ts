@@ -1,5 +1,5 @@
 export class AdoptionInterest {
-    id: Number = 0;
+    userEmail:String = '';
     name:String = '';
     dogName: String = '';
     dateAndTimeCreated: String = '';

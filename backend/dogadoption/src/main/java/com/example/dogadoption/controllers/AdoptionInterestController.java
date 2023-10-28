@@ -23,9 +23,14 @@ public class AdoptionInterestController {
         return adoptionInterestService.createAdoption(adoptionInterest);
     }
     @RequestMapping(value = "/adoption/{id}")
-    public Optional<AdoptionInterest> findAdoptionInterest(@PathVariable Long id){
+    public Optional<AdoptionInterest> findAdoptionInterest(@PathVariable String id){
         return adoptionInterestService.findAdoptionInterest(id);
     }
+
+    @RequestMapping( value = "/adoption/list/{id}")
+    public List<AdoptionInterest> findUserAdoptions(@PathVariable List<String> id){
+        return adoptionInterestService.findUserAdoption(id);
+    }
     @RequestMapping(value = "/adoption/delete/{id}")
-    public void deleteAdoptionInterest(@PathVariable Long id){adoptionInterestService.deleteAdoptionInterest(id);}
+    public void deleteAdoptionInterest(@PathVariable String id){adoptionInterestService.deleteAdoptionInterest(id);}
 }

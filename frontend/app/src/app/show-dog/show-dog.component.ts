@@ -15,7 +15,7 @@ import { UserSessionServiceService } from '../services/user-session-service.serv
 })
 export class ShowDogComponent implements OnInit {
   dog: Dog = new Dog()
-  user: any = [];
+  user: User = new User();
   adoptionForm = new AdoptionInterest();
 
   constructor(private router:Router, private route: ActivatedRoute,private dogservice: DogService, private userService: UserService, private adoptionInterestService: AdoptionInterestService, private session: UserSessionServiceService){
@@ -38,8 +38,20 @@ export class ShowDogComponent implements OnInit {
     console.log("user name" + this.user.firstName);
   }
   visitDate: String = '';
-  onSubmit(){
+  logout(){
+    this.session.logoutAdmin();
+    this.router.navigate(['/login'])
+  }
 
+  redirectToAlldogs(){
+    this.router.navigate(['/dogs'])
+  }
+
+  redirectToProfile() {
+    this.router.navigate(['/profile'])
+  }
+  onSubmit(){
+    this.adoptionForm.userEmail = this.user.email;
     this.adoptionForm.name = this.user.firstName + " " + this.user.lastName;
     this.adoptionForm.dogName = this.dog.name;
     this.adoptionForm.status = "Pending";

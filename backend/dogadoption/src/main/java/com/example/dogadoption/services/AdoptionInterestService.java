@@ -8,9 +8,11 @@ import java.util.Optional;
 public interface AdoptionInterestService {
     AdoptionInterest createAdoption(AdoptionInterest adoptionInterest);
 
+    List<AdoptionInterest> findUserAdoption(List<String> id);
+
     List<AdoptionInterest> adoptionInterestList();
 
-    Optional<AdoptionInterest> findAdoptionInterest(Long id);
+    Optional<AdoptionInterest> findAdoptionInterest(String id);
 
-    void deleteAdoptionInterest(Long id);
+    void deleteAdoptionInterest(String id);
 }

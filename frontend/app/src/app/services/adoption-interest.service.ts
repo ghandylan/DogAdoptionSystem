@@ -32,6 +32,10 @@ export class AdoptionInterestService {
     return this.http.get<AdoptionInterest>(this.appUrl + "/adoption/" + id.toString());
   }
 
+  public findUserAdoptionInterest(id: String){
+    return this.http.get<AdoptionInterest[]>(this.appUrl + "/adoption/list/" + id.toString());
+  }
+
   public deleteAdoptionInterest(id: Number){
     return this.http.get<AdoptionInterest>(this.appUrl + "/adoption/delete/" + id.toString())
   }

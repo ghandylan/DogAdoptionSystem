@@ -24,7 +24,7 @@ import {AdminDatabaseComponent} from "./admin-database/admin-database.component"
     RegistrationComponent,
     AdminShowDogsComponent,
     AdminShowDogComponent,
-    AdminDatabaseComponent
+    AdminDatabaseComponent,
   ],
     imports: [
         BrowserModule,

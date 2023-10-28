@@ -5,11 +5,12 @@ import java.util.Objects;
 
 @Entity
 public class AdoptionInterest {
-    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     // TODO: Determine relationship between AdoptionInterest, User, and Dog models
+    @Id
+    private String userEmail;
     private String userName;
     private String dogName;
     private String dateAndTimeCreated;
@@ -18,8 +19,9 @@ public class AdoptionInterest {
     public AdoptionInterest() {
     }
 
-    public AdoptionInterest(long id, String userName, String dogName, String dateAndTimeCreated, String adoptionStatus) {
+    public AdoptionInterest(long id, String userEmail, String userName, String dogName, String dateAndTimeCreated, String adoptionStatus) {
         this.id = id;
+        this.userEmail = userEmail;
         this.userName = userName;
         this.dogName = dogName;
         this.dateAndTimeCreated = dateAndTimeCreated;
@@ -32,6 +34,14 @@ public class AdoptionInterest {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getUserEmail(){
+        return this.userEmail;
+    }
+
+    public void setUserEmail(String userEmail){
+        this.userEmail = userEmail;
     }
 
     public String getName() {
