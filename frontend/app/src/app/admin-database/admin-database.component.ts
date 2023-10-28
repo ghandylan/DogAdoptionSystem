@@ -3,6 +3,7 @@ import { DogService } from '../services/dog.service';
 import { Dog } from '../models/dog';
 import { ActivatedRoute, Params } from '@angular/router';
 import {Router} from "@angular/router";
+import { VetService } from '../services/vet.service';
 
 
 @Component({
@@ -12,10 +13,13 @@ import {Router} from "@angular/router";
 })
 export class AdminDatabaseComponent implements OnInit {
   dogs: Dog[] = [];
-
-
+  constructor(private router:Router,private dogservice: DogService,private vetService: VetService){
+  }
 
   ngOnInit(): void {
+    if(this.vetService.getUserLoggedIn().username === ''){
+      this.router.navigate(['/login']);
+    }
     this.dogservice.getDogs().subscribe((data: Dog[]) => {this.dogs = data});
   }
   selectedDog: Dog = new Dog;
@@ -27,7 +31,7 @@ export class AdminDatabaseComponent implements OnInit {
   }
 
   deleteIndexValue(i: Number){
-    // this.dogservice.deleteDog(i);
+    this.dogservice.deleteDog(i);
     alert("Dog Deleted :(")
   }
   formData = new FormData();
@@ -77,3 +81,8 @@ export class AdminDatabaseComponent implements OnInit {
     }
   }
 }
+  onSubmit(){
+      this.dogservice.createDog(this.newDog);
+
+    console.log(this.newDog);
+  }}

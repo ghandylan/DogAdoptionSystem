@@ -1,122 +1,268 @@
+/* Navigation Bar */
+nav {
+  background-color: #007bff;
+  padding: 10px 0;
+  text-align: right;
+}
+
+.hList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.hList li {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.menu {
+  text-decoration: none;
+  color: white;
+  position: relative;
+}
+
+.menu-title {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 100px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  padding: 5px 0;
+  right: 0;
+}
+
+.menu:hover .menu-dropdown {
+  display: block;
+}
+
+.menu-dropdown li {
+  list-style-type: none;
+  padding: 5px;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu-dropdown li:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Welcome Section */
+.dogs {
+  background-color: black;
+  max-width: 90%;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+  margin: 0 auto;
+}
+
+.dog-content h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.dog-content p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+
+/* Dog Table */
+
 table {
-    table-layout: fixed;
-    width: 100%;
-  }
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
 
-  table th,
-  table td {
-    text-align: center;
-    vertical-align: middle;
-    padding: 10px;
-  }
+th, td {
+  padding: 8px;
+  text-align: center;
+}
 
-  .wrapper {
-    position: center;
-    max-width: 430px;
-    width: 100%;
-    background: #fee;
-    padding: 34px;
-    border-radius: 6px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
+th {
+  background-color: orange;
+  color: black;
+  text-align: center;
+}
 
-  .wrapper h2 {
-    position: relative;
-    font-size: 22px;
-    font-weight: 600;
-    color: #333;
-  }
+tbody tr:nth-child(odd) {
+  background-color: white;
+}
 
-  .wrapper h2::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 28px;
-    border-radius: 12px;
-    background: orange;
-  }
+/* UNG ANO kay harold*/
 
-  .wrapper form {
-    margin-top: 30px;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-  .wrapper form .input-box {
-    height: 52px;
-    margin: 18px 0;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  form .input-box input {
-    height: 100%;
-    width: 100%;
-    outline: none;
-    position: center;
-    text-align: center;
-    padding: 0 15px;
-    font-size: 17px;
-    font-weight: 400;
-    color: black;
-    border: 1.5px solid #C7BEBE;
-    border-bottom-width: 2.5px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-  }
+.menu {
+  margin-top: 5vh;
+  margin-right: 2vw;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
 
-  form .input-box select {
-    height: 100%;
-    width: 100%;
-    outline: none;
-    padding: 0 15px;
-    font-size: 17px;
-    font-weight: 400;
-    color: orange;
-    border: 1.5px solid #C7BEBE;
-    border-bottom-width: 2.5px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-  }
+.menu-title {
+  display: block;
+  height: 60px;
+  width: 80px;
+  padding: 12px 0 0;
+  background: rgba(208,169,51,255);
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s background-color;
+  cursor: default;
+}
 
-  .input-box input:focus,
-  .input-box input:valid {
-    border-color: red;
-  }
+.menu-title:before {
+  content: "";
+  display: block;
+  height: 0;
+  border-top: 5px solid #9dc852;
+  border-left: (150px / 2) solid transparent;
+  border-right: (150px / 2) solid transparent;
+  border-bottom: 0 solid #dddddd;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 101;
+  transition:
+    0.2s 0.2s border-top ease-out,
+    0.3s border-top-color;
+}
 
-  form .policy {
-    display: flex;
-    align-items: center;
-  }
+.menu-title:hover { background: black; }
+.menu-title:hover:before { border-top-color: #8db842; }
 
-  form h3 {
-    color: #707070;
-    font-size: 14px;
-    font-weight: 500;
-    margin-left: 10px;
-  }
+.menu:hover > .menu-title:before {
+  border-top-width: 0;
+  transition:
+    0.2s border-top-width ease-in,
+    0.3s border-top-color;
+}
 
-  .input-box.button input {
-    color: #fff;
-    letter-spacing: 1px;
-    border: none;
-    background: red;
-    cursor: pointer;
-  }
+.menu-title:after {
+  content: "";
+  display: block;
+  height: 0;
+  border-left: (150px / 2) solid transparent;
+  border-right: (150px / 2) solid transparent;
+  border-bottom: 0 solid #ebebeb;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+  transition: 0.2s border-bottom ease-in;
+}
 
-  .input-box.button input:hover {
-    background: orange;
-  }
+.menu:hover > .menu-title:after {
+  border-bottom-width: 5px;
+  transition: 0.2s 0.2s border-bottom-width ease-out;
+}
 
-  form .text h3 {
-    color: #333;
-    width: 100%;
-    text-align: center;
-  }
+.menu-dropdown {
+  text-align: center;
+  margin-top: 0vh;
+  min-width: 100%;
+  padding: 15px 0;
+  position: absolute;
+  background: #ebebeb;
+  z-index: 100;
+  transition:
+    0.5s padding,
+    0.5s background;
+}
 
-  form .text h3 a {
-    color: #4070f4;
-    text-decoration: none;
-  }
+.menu-dropdown:after {
+  content: "";
+  display: block;
+  height: 0;
+  border-top: 5px solid #ebebeb;
+  border-left: (150px / 2) solid transparent;
+  border-right: (150px / 2) solid transparent;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 101;
+  transition: 0.5s border-top;
+}
 
-  form .text h3 a:hover {
-    text-decoration: underline;
-  }
+.menu:not(:hover) > .menu-dropdown {
+  padding: 4px 0;
+  background: #dddddd;
+  z-index: 99;
+}
+
+.menu:not(:hover) > .menu-dropdown:after {
+  border-top-color: #dddddd;
+}
+
+.menu:not(:hover) > .menu-title:after {
+  border-bottom-color: #dddddd;
+}
+
+.menu-dropdown > * {
+  overflow: hidden;
+  height: 30px;
+  padding: 5px 10px;
+  background: rgba(0,0,0,0);
+  white-space: nowrap;
+  transition: 
+    0.5s height cubic-bezier(.73,.32,.34,1.5),
+    0.5s padding cubic-bezier(.73,.32,.34,1.5),
+    0.5s margin cubic-bezier(.73,.32,.34,1.5),
+    0.5s 0.2s color,
+    0.2s background-color;
+}
+
+.menu-dropdown > *:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.menu:not(:hover) > .menu-dropdown > * {
+  visibility: hidden;
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  color: rgba(25,25,25,0);
+  transition: 
+    0.5s 0.1s height,
+    0.5s 0.1s padding,
+    0.5s 0.1s margin,
+    0.3s color,
+    0.6s visibility;
+  z-index: 99;
+}
+
+.hList > * {
+  float: left;
+}
+
+.hList > * + * {
+  margin-left: 0;
+}
+

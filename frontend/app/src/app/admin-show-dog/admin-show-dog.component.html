@@ -1,57 +1,88 @@
+ <!-- Navigation Bar -->
 
+ <ul class="hList">
+  <li>
+    <a href="#click" class="menu">
+      <img class="menu-title" alt = "Menu Icon" src = "assets/menu.png">
+      <ul class="menu-dropdown">
+        <li>View All</li>
+        <li>Profile</li>
+        <li>Log Out</li>
+      </ul>
+    </a>
+  </li>
+</ul>
+
+
+<nav class="admin-navbar">
+<ul>    
+<li><a routerLink="/app/src/app/admin-database">Database</a></li>
+  <li><a routerLink="/app/src/app/admin-show-dogs">Show Dogs</a></li>
+  <li><a routerLink="/app/src/app/admin-show-dog">Show Dog</a></li>
+</ul>
+</nav>
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Dogs</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+</head>
 <body>
-    <div class="container-fluid">
-        <!-- Topbar -->
-        <div class="row py-3 px-lg-5">
-            <div class="col-lg-4">
-                <a href="" class="navbar-brand d-none d-lg-block">
-                    <h1 class="m-0 display-5 text-capitalize"><span class="text-primary">ADMIN || Saving Abused </span>and Neglected Animals</h1>
-                </a>
-            </div>
-            <div class="col-lg-8 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <!-- Add topbar content here -->
-                </div>
-            </div>
-        </div>
-        <!-- Navbar -->
-        <div class="container-fluid p-0">
-            <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                    <div class="navbar-nav mr-auto py-0">
-                        <a href="/adminhome" class="nav-item nav-link active">Home</a>
-                        <a href="/adminadoptionportal" class="nav-item nav-link">Adoption Portal</a>
-                    </div>
-                    <a href="/logout" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Logout</a>
-                </div>
-            </nav>
-        </div>
-        <!-- Main Content -->
-        <main class="container mt-5">
-            <h1>Dog</h1>
-                <form>
-                    Dog id: <input type="text" name="id" value="{{dog.id}}"/> <br>
-                    Dog name: <input type="text" name="name" value="{{dog.name}}"/> <br>
-                    Dog age: <input type="text" name="age" value="{{dog.age}}"/><br>
-                    Dog breed: <input type="text" name="breed" value="{{dog.breed}}"/><br>
-                    Dog picture: <input type="text" name="picture" value="{{dog.picture}}"/><br>
-                    Dog height: <input type="text" name="height" value="{{dog.height}}"/><br>
-                    Dog weight: <input type="text" name="weight" value="{{dog.weight}}"/><br>
-                <!-- Add other dog-related fields here -->
-                <th>Name</th>
-                <th>Age</th>
-                <th>Breed</th>
-                <th>Picture</th>
-                <th>Height</th>
-                <th>Weight</th>
+   
 
-                </form>
-        </main>
+
+  <section class="dogs">
+    <div class="dog-content">
+        <h1>Welcome to Our Dog Adoption Center</h1>
+        <p>Find your furry friend today!</p>
     </div>
-    <script>
-        // Add your JavaScript logic here
-    </script>
-</body>
+</section>
+  
+<table class="dog-table">
+  <thead>
+    <tr>
+      <th>Requestee Name</th>
+      <th>Dog Name</th>
+            <th>Date and Time Created</th>
+            <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let adoption of adoptions">
+  <td>{{adoption.name}}</td>
+  <td>{{adoption.dogName}}</td>
+  <td>{{adoption.dateAndTimeCreated}}</td>
+  <td>{{adoption.status}}</td>
+  <td>
+    <button (click)="acceptAdoption(adoption.status)">Accept</button>
+    <button (click)="rejectAdoption(adoption.status)">Reject</button>
+  </td>
+  </tr>
+</tbody>
+</table>
+
+  
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+  
+        
+  </body>
+</html>

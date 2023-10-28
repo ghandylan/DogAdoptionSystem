@@ -8,12 +8,32 @@ import { Observable, lastValueFrom } from 'rxjs';
 })
 export class UserService {
   appUrl: string;
+  userLoggedIn: User = new User();
   constructor(private http: HttpClient) {
-    this.appUrl = "http://localhost:18080"
+    this.appUrl = "http://localhost:18080";
   }
 
-  public createUser(){
-    return this.http.get(this.appUrl + "/user/create");
+  setUserLoggedIn(user: User){
+    this.userLoggedIn = user;
+  }
+
+  getUserLoggedIn(){
+    return this.userLoggedIn;
+  }
+
+  logoutUser(){
+    this.userLoggedIn = new User;
+  }
+
+  public createUser(user: User){
+    return this.http.post(this.appUrl + "/user/create",user).subscribe(
+      (response) =>{
+        console.log("Dog created: ", response);
+      },
+      (error) => {
+        console.error("Error Dog creation: ", error)
+      }
+    );
   }
 
   public loginUser(email: String, password: String){

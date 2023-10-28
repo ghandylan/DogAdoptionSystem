@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Dog } from '../models/dog';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { DogService } from '../services/dog.service';
+import { AdoptionInterest } from '../models/adoption-interest';
+import { AdoptionInterestService } from '../services/adoption-interest.service';
+import { VetService } from '../services/vet.service';
 
 @Component({
   selector: 'app-admin-show-dog',
@@ -10,21 +13,25 @@ import { DogService } from '../services/dog.service';
 })
 
 export class AdminShowDogComponent implements OnInit {
-  dog: Dog = new Dog()
+  adoptions: AdoptionInterest[] = [];
 
-  constructor(private route:ActivatedRoute,private dogservice: DogService){
-    console.log('entered constructor' + this.dog.name) //inadd
+  constructor(private route:ActivatedRoute,private router: Router , private adoptionInterestService: AdoptionInterestService, private vetService: VetService){
+  }
+
+  acceptAdoption(status: String){
+
+  }
+  rejectAdoption(status: String){
+    
   }
 
   ngOnInit(): void {
-    console.log('entered oninit' + this.dog.name)
-    this.route.params.forEach((params: Params) => {
-      if(params['id'] !== undefined){
-        const id = params['id'];
-        console.log('Id' + id)
-        this.dogservice.getDogById(id).subscribe((data: any) => {this.dog = data});
-      }
-    });
+    if(this.vetService.getUserLoggedIn().username === ''){
+      this.router.navigate(['/login']);
+    }
+    this.adoptionInterestService.getAdoptionList().subscribe((data: AdoptionInterest[]) => 
+      this.adoptions = data
+    )
   }
     
 }
