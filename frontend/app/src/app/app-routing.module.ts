@@ -9,6 +9,8 @@ import {AdminShowDogComponent} from "./admin-show-dog/admin-show-dog.component";
 import { AdminDatabaseComponent } from './admin-database/admin-database.component';
 
 import { ShowDogComponent } from './show-dog/show-dog.component';
+import { AdminEditDogComponent } from './admin-edit-dog/admin-edit-dog.component';
+import { AdminAddDogComponent } from './admin-add-dog/admin-add-dog.component';
 
 
 const routes: Routes = [
@@ -23,7 +25,9 @@ const routes: Routes = [
   //admin
   { path:'admin/dogs', component: AdminShowDogsComponent},
   { path:'admin/dog', component: AdminShowDogComponent},
-  { path: 'admindatabase', component: AdminDatabaseComponent}
+  { path: 'admindatabase', component: AdminDatabaseComponent},
+  { path: 'admin/dogs/edit/:id', component: AdminEditDogComponent},
+  { path: 'admin/dogs/add', component: AdminAddDogComponent}
 
 
 

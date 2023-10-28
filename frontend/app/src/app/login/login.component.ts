@@ -48,7 +48,7 @@ export class LoginComponent {
         this.password = "";
       }else {
         this.adminSession.setAdminSession(this.vet, "admin");
-        this.router.navigate(['/admindatabase']);
+        this.router.navigate(['/admin/dogs/add']);
       }
     }
   }
