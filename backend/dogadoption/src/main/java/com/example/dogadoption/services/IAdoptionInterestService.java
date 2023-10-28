@@ -17,12 +17,18 @@ public class IAdoptionInterestService implements AdoptionInterestService{
     public AdoptionInterest createAdoption(AdoptionInterest adoptionInterest){
         return adoptionInterestRepository.save(adoptionInterest);
     }
+
+    @Override
+    public List<AdoptionInterest> findUserAdoption(List<String> id){
+        return (List<AdoptionInterest>) adoptionInterestRepository.findAllById(id);
+    }
     @Override
     public List<AdoptionInterest> adoptionInterestList(){
             return (List<AdoptionInterest>) adoptionInterestRepository.findAll();
     }
+
     @Override
-    public Optional<AdoptionInterest> findAdoptionInterest(Long id){
+    public Optional<AdoptionInterest> findAdoptionInterest(String id){
         if(adoptionInterestRepository.existsById(id)){
             return adoptionInterestRepository.findById(id);
         }else {
@@ -30,7 +36,7 @@ public class IAdoptionInterestService implements AdoptionInterestService{
         }
     }
     @Override
-    public void deleteAdoptionInterest(Long id){
+    public void deleteAdoptionInterest(String id){
         if(adoptionInterestRepository.existsById(id)){
             adoptionInterestRepository.deleteById(id);
         }else {

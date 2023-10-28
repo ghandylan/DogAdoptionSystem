@@ -38,6 +38,9 @@ export class AdminDatabaseComponent implements OnInit {
   dog: Dog = new Dog();
   newDog: Dog = new Dog();
 
+  navigateToAdoption(){
+    this.router.navigate(['/admin/dog'])
+  }
 
   onSubmit(type: String) {
     if (type == "add"){

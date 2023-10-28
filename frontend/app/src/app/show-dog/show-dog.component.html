@@ -12,12 +12,12 @@
   </div>
   <ul class="hList">
     <li>
-      <a href="#click" class="menu">
+      <a class="menu">
         <img class="menu-title" alt = "Menu Icon" src = "assets/menu.png">
         <ul class="menu-dropdown">
-          <li>View All</li>
-          <li>Profile</li>
-          <li>Log Out</li>
+          <li (click)="redirectToAlldogs()">View All</li>
+          <li (click)="redirectToProfile()" >Profile</li>
+          <li (click)="logout()" >Log Out</li>
         </ul>
       </a>
     </li>
