@@ -23,8 +23,16 @@ export class DogService {
     return this.http.get<Dog>(this.appUrl + "/dog/" + id.toString());
   }
 
-  public createDog(){
-    return this.http.get(this.appUrl+ "/dog");
+  public createDog(dog: Dog){
+    console.log(dog);
+    return this.http.post(this.appUrl+ "/dog", dog).subscribe(
+      (response) =>{
+        console.log("Dog created: ", response);
+      },
+      (error) => {
+        console.error("Error Dog creation: ", error)
+      }
+    );
   }
 
   public updateDog(id: Number){

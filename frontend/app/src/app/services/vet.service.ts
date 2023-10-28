@@ -7,9 +7,21 @@ import { Vet } from '../models/vet';
 })
 export class VetService {
   appUrl: string;
-
+  userLoggedIn: Vet = new Vet();
   constructor(private http: HttpClient) {
     this.appUrl = "http://localhost:18080"
+  }
+
+  setUserLoggedIn(user: Vet){
+    this.userLoggedIn = user;
+  }
+
+  getUserLoggedIn(){
+    return this.userLoggedIn;
+  }
+
+  logoutUser(){
+    this.userLoggedIn = new Vet;
   }
 
   public findVetByUsername(username: String, password: String){

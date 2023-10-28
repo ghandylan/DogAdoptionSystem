@@ -38,9 +38,9 @@
     <div class = "centeredflex">
       <div class = "doginformationleftcont">
         <p class = "doginfolbl1">DOG NAME:</p>
-        <p class = "doginfotxt1">BAD BITCH</p>
+        <p class = "doginfotxt1">{{dog.name}}</p>
         <div class = "centeredflex">
-          <img class = "doginfoimage" alt = "Dog Image" src = "assets/sampledog.png">
+          <img class = "doginfoimage" alt = "Dog Image" src = "data:image/png;base64, {{dog.picture}}">
         </div>
       </div>
 
@@ -55,7 +55,7 @@
               <div class = "centeredflex vw60">
                 <div class = "block">
                   <p class = "doginfolbl2">Age:</p>
-                  <p class = "doginfotxt2">3 years old</p>
+                  <p class = "doginfotxt2">{{dog.age}} years old</p>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@
               <div class = "centeredflex vw60">
                 <div class = "block">
                   <p class = "doginfolbl2">Birthday:</p>
-                  <p class = "doginfotxt2">09/17/2002</p>
+                  <p class = "doginfotxt2">{{dog.dateOfBirth}}</p>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@
               <div class = "centeredflex vw60">
                 <div class = "block">
                   <p class = "doginfolbl2">Gender:</p>
-                  <p class = "doginfotxt2">Female</p>
+                  <p class = "doginfotxt2">{{dog.gender}}</p>
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@
               <div class = "centeredflex vw60">
                 <div class = "block">
                   <p class = "doginfolbl2">Breed:</p>
-                  <p class = "doginfotxt2">Golden Retriever</p>
+                  <p class = "doginfotxt2">{{dog.breed}}</p>
                 </div>
               </div>
             </div>
@@ -115,7 +115,7 @@
               <div class = "centeredflex vw60">
                 <div class = "block">
                   <p class = "doginfolbl2">Height:</p>
-                  <p class = "doginfotxt2">8 inches</p>
+                  <p class = "doginfotxt2">{{dog.height}} inches</p>
                 </div>
               </div>
             </div>
@@ -129,7 +129,7 @@
               <div class = "centeredflex vw60">
                 <div class = "block">
                   <p class = "doginfolbl2">Weight:</p>
-                  <p class = "doginfotxt2">30 kilograms</p>
+                  <p class = "doginfotxt2">{{dog.weight}} kilograms</p>
                 </div>
               </div>
             </div>
@@ -152,19 +152,14 @@
     <div class = "centeredflex">
       <table class = "medicalcondtable">
         <tr>
-          <td class = "tabledata">Allergies:</td>
-          <td class = "tabledata">None</td>
-        </tr>
-        <tr>
-          <td class = "tabledata">Existing Conditions:</td>
-          <td class = "tabledata">None</td>
+          <td class = "tabledata">{{dog.medicalConditions}}</td>
         </tr>
       </table>
     </div>
   </div>
 </div>
-
-<div class = "dogimagescont top5">
+<!-- 
+<div class = "picturescont top5">
   <div class = "block vw80">
     <div class = "tile">
       <img class = "tilebg" alt = "Header Background Image" src = "assets/tilesbg.png">
@@ -173,7 +168,7 @@
       </div>
     </div>
     <div class = "tileseperator"><br></div>
-    <div class = "dogimages centeredflex gold">
+    <div class = "pictures centeredflex gold">
       <div class = "dogimgcont">
         <img class = "doggalleryimage" alt = "Dog Gallery 1" src = "assets/sampledog2.jpg">
       </div>
@@ -185,7 +180,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class = "dogadoptionrequest vw 90 top5">
   <div class = "block vw90">
@@ -205,12 +200,13 @@
             adopting. If you are ready to adopt, please fill out the form on the right.</p>
         </div>
         <div class = "adoptionformcont">
+          <form>
           <div class = "adoptionformrow">
             <div class = "adoptionformlabel">
               <p>Adopter Name:</p>
             </div>
             <div class = "adoptionformdata">
-              <p>Harold Visperas</p>
+              <p>{{user.firstName}} {{user.lastName}}</p>
             </div>
           </div>
           <div class = "adoptionformrow">
@@ -218,7 +214,7 @@
               <p>Dog Name:</p>
             </div>
             <div class = "adoptionformdata">
-              <p>Bad Bitch</p>
+              <p>{{dog.name}}</p>
             </div>
           </div>
           <div class = "adoptionformrow">
@@ -226,12 +222,13 @@
               <p>Visit Date:</p>
             </div>
             <div class = "adoptionformdata">
-              <input class = "adoptionformdate" type="date" id = "visitDate" name="visitDate" required/>
+              <input class = "adoptionformdate" type="date" id = "visitDate" name="visitDate" [(ngModel)]="visitDate" required/>
             </div>
           </div>
           <div class = "centeredflex vw100 top5">
-            <input class = "adoptionformsubmit" type = "submit" value = "Submit">
+            <input class = "adoptionformsubmit" type = "submit" (click)="onSubmit()" value = "Submit">
           </div>
+        </form>
         </div>
       </div>
     </div>
