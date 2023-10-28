@@ -45,6 +45,7 @@ export class AdminAddDogComponent {
     this.dogservice.createDog(this.formData).subscribe(
         (response) => {
           console.log(response);
+          this.router.navigate(['/admin/dogs/add']);
         }
     );
     }
@@ -56,6 +57,7 @@ export class AdminAddDogComponent {
     if (file) {
       this.formData.append('dogImage', file);
     }
+    return inputElement.files?.[0];
   }
 
   editDog(id: Number){
@@ -65,7 +67,8 @@ export class AdminAddDogComponent {
   deleteDog(id: Number){
     this.dogservice.deleteDog(id).subscribe();
     alert("Your dog has been removed to the list :(");
-    window.location.reload();
+    // redirect to the list of dogs
+    this.router.navigate(['/admin/dogs']);
   }
 
 }
