@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<body>
+
+<div class="admin">
+    <h2>Admin Dashboard</h2>
+
+	<!-- Edit Dog Section -->
+    <div class="edit-dog-section">
+      <h3>Edit Dog</h3>
+      <form>
+        <div class="form-group">
+		<label for="dogName">Name:</label>
+          <input name="selectedDog.name" [(ngModel)]="selectedDog.name" class="form-control" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+		<label for="dogName">Date of Birth:</label>
+          <input type="date" name="selectedDog.dateOfBirth" [(ngModel)]="selectedDog.dateOfBirth" class="form-control" placeholder="dateOfBirth" required>
+        </div>
+        <div class="form-group">
+		<label for="dogName"> Gender:</label>
+          <input name="selectedDog.gender" [(ngModel)]="selectedDog.gender" class="form-control" placeholder="gender" required>
+        </div>
+        <div class="form-group">
+		<label for="dogName">Breed:</label>
+          <input name="selectedDog.breed" [(ngModel)]="selectedDog.breed" class="form-control" placeholder="Breed" required>
+        </div>
+        <div class="form-group">
+		<label for="dogName">Dog Picture:</label>
+          <input type="file" accept="image/png, image/jpeg, image/img" name="selectedDog.picture" [(ngModel)]="selectedDog.picture" class="form-control" style="width: 30px;" placeholder="Picture">
+        </div>
+        <div class="form-group">
+		<label for="dogName">Height:</label>
+          <input name="selectedDog.height" [(ngModel)]="selectedDog.height" class="form-control" placeholder="Height">
+        </div>
+        <div class="form-group">
+		<label for="dogName">Weight:</label>
+          <input name="selectedDog.weight" [(ngModel)]="selectedDog.weight" class="form-control" placeholder="Weight">
+        </div>
+        <div class="form-group">
+		<label for="dogName">Medical Condition:</label>
+          <input [(ngModel)]="selectedDog.medicalConditions" name="selectedDog.medicalConditions" class="form-control" placeholder="Medical Conditions" required>
+        </div>
+        <button type="submit" (click)="onSubmit('edit')" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+
+    <!-- Display Dogs Table -->
+    <div class="dogs-table">
+      <h3>Dogs</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+			<th>Date Of Birth</th>
+			<th>Gender</th>
+            <th>Age</th>
+            <th>Breed</th>
+            <th>Picture</th>
+            <th>Height</th>
+            <th>Weight</th>
+			<th>Medical Conditions</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dog of dogs">
+            <td>{{dog.name}}</td>
+			<td>{{dog.dateOfBirth}}</td>
+			<td>{{dog.gender}}</td>
+            <td>{{dog.age}}</td>
+            <td>{{dog.breed}}</td>
+            <td><img src="data:image/png;base64,{{dog.picture}}" alt="Dog Picture" style="max-width: 30px;"></td>
+            <td>{{dog.height}}</td>
+            <td>{{dog.weight}}</td>
+			<td>{{dog.medicalConditions}}</td>
+            <td>
+              <button class="btn btn-sm btn-info" type="submit" (click)="editIndexValue(dog.id)">Edit</button>
+              <button class="btn btn-sm btn-danger" type="submit" (click)="deleteIndexValue(dog.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+</body>
