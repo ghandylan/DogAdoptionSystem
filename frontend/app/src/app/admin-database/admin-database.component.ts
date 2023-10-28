@@ -47,9 +47,11 @@ export class AdminDatabaseComponent implements OnInit {
   constructor(private router:Router,private dogservice: DogService){
   }
   onSubmit() {
-
+  // appent the dogImage to the formData object
+    this.formData.append('dogImage', this.dog.picture);
 
     // Append other form data and send the request
+
     this.formData.append('name', this.dog.name);
     this.formData.append('age', this.dog.age.toString());
     this.formData.append('dateOfBirth', this.dog.dateOfBirth);
@@ -59,12 +61,11 @@ export class AdminDatabaseComponent implements OnInit {
     this.formData.append('weight', this.dog.weight);
     this.formData.append('medicalConditions', this.dog.medicalConditions);
 
+    // set response type to form data
+
     this.dogservice.createDog(this.formData).subscribe(
         (response) => {
-          console.log('Dog saved successfully', response);
-        },
-        (error) => {
-          console.error('Dog not saved', error);
+          console.log(response);
         }
     );
   }
