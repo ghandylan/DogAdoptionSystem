@@ -7,7 +7,6 @@ import { Vet } from '../models/vet';
 })
 export class VetService {
   appUrl: string;
-
   constructor(private http: HttpClient) {
     this.appUrl = "http://localhost:18080"
   }

@@ -9,11 +9,18 @@ import { Observable, lastValueFrom } from 'rxjs';
 export class UserService {
   appUrl: string;
   constructor(private http: HttpClient) {
-    this.appUrl = "http://localhost:18080"
+    this.appUrl = "http://localhost:18080";
   }
 
-  public createUser(){
-    return this.http.get(this.appUrl + "/user/create");
+  public createUser(user: User){
+    return this.http.post(this.appUrl + "/user/create",user).subscribe(
+      (response) =>{
+        console.log("Dog created: ", response);
+      },
+      (error) => {
+        console.error("Error Dog creation: ", error)
+      }
+    );
   }
 
   public loginUser(email: String, password: String){
@@ -27,4 +34,5 @@ export class UserService {
   public deleteUser(email: String) {
     return this.http.get(this.appUrl + "/user/" + email.toString() + "/delete")
   }
+
 }

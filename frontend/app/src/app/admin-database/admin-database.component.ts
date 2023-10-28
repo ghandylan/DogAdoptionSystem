@@ -3,6 +3,7 @@ import { DogService } from '../services/dog.service';
 import { Dog } from '../models/dog';
 import { ActivatedRoute, Params } from '@angular/router';
 import {Router} from "@angular/router";
+import { VetService } from '../services/vet.service';
 
 
 @Component({
@@ -12,10 +13,13 @@ import {Router} from "@angular/router";
 })
 export class AdminDatabaseComponent implements OnInit {
   dogs: Dog[] = [];
-
-
+  constructor(private router:Router,private dogservice: DogService,private vetService: VetService){
+  }
 
   ngOnInit(): void {
+    if(this.vetService.getUserLoggedIn().username === ''){
+      this.router.navigate(['/login']);
+    }
     this.dogservice.getDogs().subscribe((data: Dog[]) => {this.dogs = data});
   }
   selectedDog: Dog = new Dog;
@@ -27,31 +31,17 @@ export class AdminDatabaseComponent implements OnInit {
   }
 
   deleteIndexValue(i: Number){
-    // this.dogservice.deleteDog(i);
+    this.dogservice.deleteDog(i);
     alert("Dog Deleted :(")
   }
   formData = new FormData();
-  dog: Dog = {
-    id: 0,
-    picture: null,
-    name: "",
-    age: 0, // Set a default age value
-    dateOfBirth: "",
-    gender: "",
-    breed: "",
-    height: "", // Set a default height value
-    weight: "", // Set a default weight value
-    medicalConditions: ""
-  };
+  dog: Dog = new Dog();
+  newDog: Dog = new Dog();
 
-  constructor(private router:Router,private dogservice: DogService){
-  }
-  onSubmit() {
-  // appent the dogImage to the formData object
-    this.formData.append('dogImage', this.dog.picture);
 
-    // Append other form data and send the request
-
+  onSubmit(type: String) {
+    if (type == "add"){
+      // Append other form data and send the request
     this.formData.append('name', this.dog.name);
     this.formData.append('age', this.dog.age.toString());
     this.formData.append('dateOfBirth', this.dog.dateOfBirth);
@@ -68,6 +58,10 @@ export class AdminDatabaseComponent implements OnInit {
           console.log(response);
         }
     );
+    }else {
+      //update dog
+    }
+
   }
 
   onFileChange(event: Event) {

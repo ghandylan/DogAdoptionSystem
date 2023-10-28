@@ -23,7 +23,6 @@ export class DogService {
 
   public createDog(formData:FormData): Observable<any> {
     // Create a FormData object
-
     return this.http.post(this.appUrl + "/dog", formData, {responseType: 'text'});
   }
 

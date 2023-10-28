@@ -183,7 +183,7 @@ body {
 
 
 
-.doginformationcont, .dogmedicalcondcont, .dogimagescont, .dogadoptionrequest {
+.doginformationcont, .dogmedicalcondcont, .picturescont, .dogadoptionrequest {
   display: flex;
   align-content: center;
   justify-content: center;
