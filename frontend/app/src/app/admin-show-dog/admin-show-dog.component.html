@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="show-dog.component (1).css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class = "header">
             <img class = "headerbg" alt = "Header Background Image" src = "assets/tilesbg.png">
             <img class = "fulllogo" alt = "Logo" src = "assets/fulllogo.png">
             <div class = "headertitlecont">
-                <h1 class = "headertitle">User Profile</h1>
+                <h1 class = "headertitle">Request List</h1>
             </div>
             <ul class="hList">
                 <li>
                   <a class="menu">
                     <img class="menu-title" alt = "Menu Icon" src = "assets/menu.png">
                     <ul class="menu-dropdown">
-                      <li (click)="redirectToAlldogs()">View All</li>
-                      <li (click)="redirectToProfile()" >Profile</li>
+                      <li (click)="XXXX">Dog List</li>
+                      <li (click)="XXXXX" >Requests</li>
                       <li (click)="logout()" >Log Out</li>
                     </ul>
                   </a>
                 </li>
             </ul>
         </div>
+        <div class = "headerseperator"><br></div>
 
-        <div class="topnav">
+        <!-- <div class="topnav">
           <a (click)="XXXXX">Add Dog</a>
           <a (click)="XXXXX">Edit Dog</a>
           <a (click)="XXXXX">Show Dog</a>
-        </div>
-
+        </div> -->
 
         <table class="admintable">
           <thead>
             <tr>
-              <th class = "tableheader" colspan = 5>Pending Adoption Requests</th>
+              <th class = "tableheader" colspan = 5>Adoption Request List</th>
             </tr>
             <tr>
               <th class = "noborder tablelabels vw25">Adoptee Name</th>
