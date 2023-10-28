@@ -13,6 +13,8 @@ import {FormsModule} from "@angular/forms";
 import {AdminShowDogsComponent} from "./admin-show-dogs/admin-show-dogs.component";
 import {AdminShowDogComponent} from "./admin-show-dog/admin-show-dog.component";
 import {AdminDatabaseComponent} from "./admin-database/admin-database.component";
+import { AdminAddDogComponent } from './admin-add-dog/admin-add-dog.component';
+import { AdminEditDogComponent } from './admin-edit-dog/admin-edit-dog.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import {AdminDatabaseComponent} from "./admin-database/admin-database.component"
     AdminShowDogsComponent,
     AdminShowDogComponent,
     AdminDatabaseComponent,
+    AdminAddDogComponent,
+    AdminEditDogComponent
   ],
     imports: [
         BrowserModule,
