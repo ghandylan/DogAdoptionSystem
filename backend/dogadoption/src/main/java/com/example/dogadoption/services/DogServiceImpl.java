@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DogServiceImpl implements DogService {
+public class    DogServiceImpl implements DogService {
     private final DogRepository dogRepository;
 
     public DogServiceImpl(DogRepository dogRepository) {

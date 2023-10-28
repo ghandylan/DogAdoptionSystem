@@ -4,11 +4,11 @@
 
 <div class="admin">
     <h2>Admin Dashboard</h2>
-  
+
     <!-- Add New Dog Section -->
     <div class="add-dog-section">
       <h3>Add New Dog</h3>
-      <form>
+      <form (ngSubmit)="onSubmit()"  enctype="multipart/form-data">
         <div class="form-group">
           <label for="dogName">Name:</label>
           <input [(ngModel)]="newDog.name" name="newDog.name" class="form-control" required>
@@ -37,7 +37,7 @@
         </div>
         <div class="form-group">
           <label for="dogPicture">Animal Picture:</label>
-          <input type="file" accept="image/png, image/jpeg, image/img" name="newDog.picture" [(ngModel)]="newDog.picture" class="form-control" placeholder="Picture">
+          <input type="file" accept="image/png, image/jpeg, image/img" name="newDog.picture"   class="form-control" placeholder="Picture" (change)="onFileChange($event)" required>
         </div>
         <div class="form-group">
           <label for="dogHeight">Height:</label>
@@ -54,7 +54,7 @@
         <button type="button" (click)="onSubmit()" class="btn btn-primary">Add</button>
       </form>
     </div>
-  
+
     <!-- Display Dogs Table -->
     <div class="dogs-table">
       <h3>Dogs</h3>
@@ -80,7 +80,7 @@
 			<td>{{dog.gender}}</td>
             <td>{{dog.age}}</td>
             <td>{{dog.breed}}</td>
-            <td><img src="{{dog.picture}}" alt="Dog Picture"></td>
+            <td><img src="data:image/png;base64,{{dog.picture}}" alt="Dog Picture"></td>
             <td>{{dog.height}}</td>
             <td>{{dog.weight}}</td>
 			<td>{{dog.medicalConditions}}</td>
@@ -133,5 +133,3 @@
     </div>
   </div>
 </body>
-
-  
