@@ -18,12 +18,12 @@ public class Dog {
     private String pictureType;
 
     private String name;
-    private int age;
+    private String age;
     private String dateOfBirth;
     private String gender;
     private String breed;
-    private int height;
-    private int weight;
+    private String height;
+    private String weight;
     private String medicalConditions;
 
     public Dog() {
@@ -32,7 +32,7 @@ public class Dog {
 
 
 
-    public Dog(long id, byte[] picture, String pictureName, String pictureType, String name, int age, String dateOfBirth, String gender, String breed, int height, int weight, String medicalConditions) {
+    public Dog(long id, byte[] picture, String pictureName, String pictureType, String name, String age, String dateOfBirth, String gender, String breed, String height, String weight, String medicalConditions) {
         this.id = id;
         this.picture = picture;
         this.pictureName = pictureName;
@@ -89,11 +89,11 @@ public class Dog {
         this.name = name;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -121,19 +121,19 @@ public class Dog {
         this.breed = breed;
     }
 
-    public int getHeight() {
+    public String getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(String height) {
         this.height = height;
     }
 
-    public int getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 

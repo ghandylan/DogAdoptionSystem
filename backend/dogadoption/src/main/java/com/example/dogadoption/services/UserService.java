@@ -12,4 +12,7 @@ public interface UserService {
     Optional<User> findUserById(String id);
 
     void deleteUser(String id);
+
+    // checking password
+    boolean isPasswordCorrect(String userPassword, String enteredPassword);
 }

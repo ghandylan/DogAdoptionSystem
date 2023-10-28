@@ -14,18 +14,18 @@ public class AdoptionInterestController {
     public AdoptionInterestController(AdoptionInterestService adoptionInterestService){
         this.adoptionInterestService = adoptionInterestService;
     }
-    @RequestMapping(value = "/AdoptionInterest/List")
+    @RequestMapping(value = "/adoption/list")
     public List<AdoptionInterest> getAllAdoptionInterest(){
         return (List<AdoptionInterest>) adoptionInterestService.adoptionInterestList();
     }
-    @RequestMapping(value = "/AdoptionInterest/create")
+    @RequestMapping(value = "/adoption/create")
     public AdoptionInterest createAdoptionInterest(@RequestBody AdoptionInterest adoptionInterest){
         return adoptionInterestService.createAdoption(adoptionInterest);
     }
-    @RequestMapping(value = "/AdoptionInterest/{id}")
+    @RequestMapping(value = "/adoption/{id}")
     public Optional<AdoptionInterest> findAdoptionInterest(@PathVariable Long id){
         return adoptionInterestService.findAdoptionInterest(id);
     }
-    @RequestMapping(value = "/AdoptionInterest/delete/{id}")
+    @RequestMapping(value = "/adoption/delete/{id}")
     public void deleteAdoptionInterest(@PathVariable Long id){adoptionInterestService.deleteAdoptionInterest(id);}
 }
