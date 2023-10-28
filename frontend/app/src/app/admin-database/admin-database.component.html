@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
           <label for="dogAge">Age:</label>
-          <input [(ngModel)]="newDog.age" name="newDog.age" class="form-control" required>
+          <input type="number" [(ngModel)]="newDog.age" name="newDog.age" class="form-control" required>
         </div>
         <div class="form-group">
           <label for="dogBreed">Breed:</label>
@@ -41,17 +41,17 @@
         </div>
         <div class="form-group">
           <label for="dogHeight">Height:</label>
-          <input [(ngModel)]="newDog.height" name="newDog.height" class="form-control">
+          <input type="number" [(ngModel)]="newDog.height" name="newDog.height" class="form-control">
         </div>
         <div class="form-group">
           <label for="dogWeight">Weight:</label>
-          <input [(ngModel)]="newDog.weight" name="newDog.weight" class="form-control">
+          <input type="number" [(ngModel)]="newDog.weight" name="newDog.weight" class="form-control">
         </div>
         <div class="form-group">
           <label for="dogMedicalConditions">Medical Conditions:</label>
           <input [(ngModel)]="newDog.medicalConditions" name="newDog.medicalConditions" class="form-control">
         </div>
-        <button type="button" (click)="onSubmit('add')" class="btn btn-primary">Add</button>
+        <button type="submit" class="btn btn-primary">Add</button>
       </form>
     </div>
 

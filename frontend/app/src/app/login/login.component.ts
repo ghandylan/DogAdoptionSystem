@@ -5,6 +5,8 @@ import { VetService } from '../services/vet.service';
 import { User } from '../models/user';
 import { Vet } from '../models/vet';
 import { firstValueFrom, lastValueFrom } from 'rxjs';
+import { AdminSessionServiceService } from '../services/admin-session-service.service';
+import { UserSessionServiceService } from '../services/user-session-service.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,7 @@ import { firstValueFrom, lastValueFrom } from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private router: Router, private userService: UserService, private vetService: VetService) {
+  constructor(private router: Router, private userService: UserService, private vetService: VetService, private adminSession: AdminSessionServiceService, private userSession: UserSessionServiceService) {
   }
 
   redirectToRegister() {
@@ -27,14 +29,14 @@ export class LoginComponent {
   async onSubmit() {
     if(this.username.toString().match("@")){
       this.user = await lastValueFrom(this.userService.loginUser(this.username, this.password))
-      console.log("vevt username '" + this.user.email + "'");
+      console.log("user username '" + this.user.email + "'");
       if(this.user.email === null){
         alert("Credentials are incorrect!");
         this.username = "";
         this.password = "";
 
       }else {
-        this.userService.setUserLoggedIn(this.user);
+        this.userSession.setAdminSession(this.user, "client");
         this.router.navigate(['/dogs']);
       }
     }else {
@@ -45,7 +47,7 @@ export class LoginComponent {
         this.username = "";
         this.password = "";
       }else {
-        this.vetService.setUserLoggedIn(this.vet);
+        this.adminSession.setAdminSession(this.vet, "admin");
         this.router.navigate(['/admindatabase']);
       }
     }

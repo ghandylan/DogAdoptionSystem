@@ -5,6 +5,7 @@ import { DogService } from '../services/dog.service';
 import { AdoptionInterest } from '../models/adoption-interest';
 import { AdoptionInterestService } from '../services/adoption-interest.service';
 import { VetService } from '../services/vet.service';
+import { AdminSessionServiceService } from '../services/admin-session-service.service';
 
 @Component({
   selector: 'app-admin-show-dog',
@@ -15,7 +16,7 @@ import { VetService } from '../services/vet.service';
 export class AdminShowDogComponent implements OnInit {
   adoptions: AdoptionInterest[] = [];
 
-  constructor(private route:ActivatedRoute,private router: Router , private adoptionInterestService: AdoptionInterestService, private vetService: VetService){
+  constructor(private route:ActivatedRoute,private router: Router , private adoptionInterestService: AdoptionInterestService, private vetService: VetService, private session: AdminSessionServiceService){
   }
 
   acceptAdoption(status: String){
@@ -26,7 +27,8 @@ export class AdminShowDogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.vetService.getUserLoggedIn().username === ''){
+    console.log(this.session.getAccess())
+    if(this.session.getAccess() === ""){
       this.router.navigate(['/login']);
     }
     this.adoptionInterestService.getAdoptionList().subscribe((data: AdoptionInterest[]) => 

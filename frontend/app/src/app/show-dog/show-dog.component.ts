@@ -6,6 +6,7 @@ import { User } from '../models/user';
 import { UserService } from '../services/user.service';
 import { AdoptionInterest } from '../models/adoption-interest';
 import { AdoptionInterestService } from '../services/adoption-interest.service';
+import { UserSessionServiceService } from '../services/user-session-service.service';
 
 @Component({
   selector: 'app-show-dog',
@@ -14,16 +15,16 @@ import { AdoptionInterestService } from '../services/adoption-interest.service';
 })
 export class ShowDogComponent implements OnInit {
   dog: Dog = new Dog()
-  user: User = new User();
+  user: any = [];
   adoptionForm = new AdoptionInterest();
 
-  constructor(private router:Router, private route: ActivatedRoute,private dogservice: DogService, private userService: UserService, private adoptionInterestService: AdoptionInterestService){
+  constructor(private router:Router, private route: ActivatedRoute,private dogservice: DogService, private userService: UserService, private adoptionInterestService: AdoptionInterestService, private session: UserSessionServiceService){
     console.log('entered constructor' + this.dog.name) //inadd
 
 
   }
   ngOnInit(): void {
-    if(this.userService.getUserLoggedIn().email === ''){
+    if(this.session.getAccess() === ""){
       this.router.navigate(['/login']);
     }
     this.route.params.forEach((params: Params) => {
@@ -33,7 +34,8 @@ export class ShowDogComponent implements OnInit {
         this.dogservice.getDogById(id).subscribe(data => {this.dog =data});
       }
     });
-    this.user = this.userService.getUserLoggedIn();
+    this.user = this.session.getUser();
+    console.log("user name" + this.user.firstName);
   }
   visitDate: String = '';
   onSubmit(){
