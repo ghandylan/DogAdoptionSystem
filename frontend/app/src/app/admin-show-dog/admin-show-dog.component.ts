@@ -19,18 +19,20 @@ export class AdminShowDogComponent implements OnInit {
   constructor(private route:ActivatedRoute,private router: Router , private adoptionInterestService: AdoptionInterestService, private vetService: VetService, private session: AdminSessionServiceService){
   }
 
-  acceptAdoption(status: String){
-
+  acceptAdoption(selectedAdoption: AdoptionInterest){
+    selectedAdoption.status = "Accepted";
+    this.adoptionInterestService.updateAdoptionInterest(selectedAdoption.userEmail, selectedAdoption)
   }
-  rejectAdoption(status: String){
-    
+  rejectAdoption(selectedAdoption: AdoptionInterest){
+    selectedAdoption.status = "Denied";
+    this.adoptionInterestService.updateAdoptionInterest(selectedAdoption.userEmail, selectedAdoption)
   }
 
   ngOnInit(): void {
     console.log(this.session.getAccess())
-    if(this.session.getAccess() === ""){
-      this.router.navigate(['/login']);
-    }
+    // if(this.session.getAccess() === ""){
+    //   this.router.navigate(['/login']);
+    // }
     this.adoptionInterestService.getAdoptionList().subscribe((data: AdoptionInterest[]) => 
       this.adoptions = data
     )

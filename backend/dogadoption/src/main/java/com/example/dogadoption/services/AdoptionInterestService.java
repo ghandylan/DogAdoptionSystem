@@ -14,5 +14,7 @@ public interface AdoptionInterestService {
 
     Optional<AdoptionInterest> findAdoptionInterest(String id);
 
+    AdoptionInterest updateAdoptionInterestStatus(String id, AdoptionInterest adoptionInterest);
+
     void deleteAdoptionInterest(String id);
 }

@@ -39,4 +39,15 @@ export class AdoptionInterestService {
   public deleteAdoptionInterest(id: Number){
     return this.http.get<AdoptionInterest>(this.appUrl + "/adoption/delete/" + id.toString())
   }
+
+  public updateAdoptionInterest(id: String, adoptionInterest: AdoptionInterest){
+    return this.http.post(this.appUrl + "/adoption/update/" + id.toString(), adoptionInterest).subscribe(
+      (response) =>{
+        console.log("Adoption updated: ", response);
+      },
+      (error) => {
+        console.error("Error Adoption update: ", error)
+      }
+    )
+  }
 }

@@ -27,6 +27,11 @@ public class AdoptionInterestController {
         return adoptionInterestService.findAdoptionInterest(id);
     }
 
+    @RequestMapping(value = "/adoption/update/{id}")
+    public AdoptionInterest updateAdoptionInterest(@RequestBody AdoptionInterest adoptionInterest, @PathVariable String id){
+        return adoptionInterestService.updateAdoptionInterestStatus(id, adoptionInterest);
+    }
+
     @RequestMapping( value = "/adoption/list/{id}")
     public List<AdoptionInterest> findUserAdoptions(@PathVariable List<String> id){
         return adoptionInterestService.findUserAdoption(id);

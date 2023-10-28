@@ -36,6 +36,24 @@ public class IAdoptionInterestService implements AdoptionInterestService{
         }
     }
     @Override
+    public AdoptionInterest updateAdoptionInterestStatus(String id, AdoptionInterest adoptionInterest){
+        Optional<AdoptionInterest> placeholder = adoptionInterestRepository.findById(id);
+        // if there is a dog with that id, update the dog and save it
+        if (placeholder.isPresent()) {
+            AdoptionInterest aiUpdated = placeholder.get();
+            if(adoptionInterest.getStatus().equals("Accept")){
+                aiUpdated.setStatus("Accepted");
+            } else if (adoptionInterest.getStatus().equals("Denied")) {
+                aiUpdated.setStatus("Denied");
+            }else{
+                return new AdoptionInterest();
+            }
+            return adoptionInterestRepository.save(aiUpdated);
+        } else {
+            return new AdoptionInterest();
+        }
+    }
+    @Override
     public void deleteAdoptionInterest(String id){
         if(adoptionInterestRepository.existsById(id)){
             adoptionInterestRepository.deleteById(id);
