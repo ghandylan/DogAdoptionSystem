@@ -24,6 +24,7 @@ export class UserProfileComponent {
     this.adoptionService.findUserAdoptionInterest(this.session.getUser().email).subscribe(((data: AdoptionInterest[]) => {
       this.userAdoptionList = data;
     }))
+    console.log(this.userAdoptionList);
   }
 
   logout(){

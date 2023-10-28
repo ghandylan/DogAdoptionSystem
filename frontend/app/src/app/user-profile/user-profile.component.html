@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="user-profile.component.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
@@ -74,11 +75,10 @@
                         <th class = "tableheader" colspan = 4>Pending Adoption Request</th>
                     </tr> -->
                     <tr class = "tblseperator">
-                        <th class = "tablelabels" colspan = 3>Dog Information</th>
-                        <th class = "tablelabels tblsideseperator">Status</th>
+                        <th class = "tablelabels vw50">Dog Information</th>
+                        <th class = "tablelabels tblsideseperator vw20">Status</th>
                     </tr>
-                    <div *ngFor="let adoption of userAdoptionList">
-                        <tr class = "tblseperator center">
+                        <tr class = "tblseperator center" *ngFor="let adoption of userAdoptionList">
                             <!-- <a href="/ewan/{{dog.medicalhistory}}"> -->
                                 <td class = "tabledata vw50">
                                     <!-- <p>[[dog.name]]</p> -->
@@ -91,7 +91,6 @@
                                 </td>
                             <!-- </a> -->
                         </tr>
-                    </div>
                 </table>
             </div>
         </div>

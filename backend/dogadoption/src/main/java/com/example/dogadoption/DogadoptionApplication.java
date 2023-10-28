@@ -21,7 +21,7 @@ public class DogadoptionApplication {
     @PostConstruct
     public void initUsers() {
         List<Vet> vets = Stream.of(
-                new Vet(1, "vet1", "password", "address1", "dateAndTimeCreated1")
+                new Vet(1, "makativet", "123", "address1", "dateAndTimeCreated1")
                 ).collect(Collectors.toList());
         vetRepository.saveAll(vets);
     }

@@ -15,8 +15,8 @@
                   <a class="menu">
                     <img class="menu-title" alt = "Menu Icon" src = "assets/menu.png">
                     <ul class="menu-dropdown">
-                      <li (click)="XXXX">Dog List</li>
-                      <li (click)="XXXXX" >Requests</li>
+                      <li (click)="navigateToDogList()">Dog List</li>
+                      <li (click)="navigateToRequests()" >Requests</li>
                       <li (click)="logout()" >Log Out</li>
                     </ul>
                   </a>
@@ -58,7 +58,7 @@
             <div class="form-group">
                 <label for="dogName">Dog Picture:</label>
                 <input type="file" accept="image/png, image/jpeg, image/img" name="selectedDog.picture"
-                       (change)="onFileChange($event)" class="form-control" style="width: 30px;" required>
+                       (change)="onFileChange($event)" class="form-control" style="width: 250px;" required>
                 <p *ngIf="newDog.picture">{{newDog.picture.name}}</p>
             </div>
 
