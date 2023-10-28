@@ -65,4 +65,10 @@ export class AdminAddDogComponent {
     this.router.navigate(['/admin/dogs/edit/' + id]);
   }
 
+  deleteDog(id: Number){
+    alert("dog id is " + id)
+    this.dogservice.deleteDog(id);
+    alert("Your dog has been removed to the list :(");
+  }
+
 }

@@ -31,6 +31,6 @@ export class DogService {
   }
 
   public deleteDog(id: Number){
-    return this.http.get(this.appUrl + "/dog/" + id.toString());
+    return this.http.delete(this.appUrl + "/dog/" + id.toString());
   }
 }
