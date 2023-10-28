@@ -81,4 +81,14 @@ export class AdminEditDogComponent {
         this.router.navigate(['/admin/dogs']);
         alert("Your dog has been removed to the list :(");
     }
+    logout(){
+        this.session.logoutAdmin();
+        this.router.navigate(['/login'])
+    }
+      navigateToDogList(){
+        this.router.navigate(['/admin/dogs/add'])
+      }
+      navigateToRequests(){
+        this.router.navigate(['/admin/dog/requests'])
+      }
 }

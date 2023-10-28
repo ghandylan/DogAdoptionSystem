@@ -21,9 +21,9 @@ export class AdminAddDogComponent {
   }
 
   ngOnInit(): void {
-    // if(this.session.getAccess() === ""){
-    //   this.router.navigate(['/login']);
-    // }
+    if(this.session.getAccess() === ""){
+      this.router.navigate(['/login']);
+    }
     this.dogservice.getDogs().subscribe((data: Dog[]) => {this.dogs = data});
   }
 
@@ -45,11 +45,12 @@ export class AdminAddDogComponent {
     this.dogservice.createDog(this.formData).subscribe(
         (response) => {
           console.log(response);
+          alert("Dog Created! :>")
           this.router.navigate(['/admin/dogs/add']);
         }
     );
     }
-
+    this.router.navigate(['/admin/dogs/add']);
   }
   onFileChange(event: Event) {
     const inputElement = event.target as HTMLInputElement;
@@ -68,7 +69,16 @@ export class AdminAddDogComponent {
     this.dogservice.deleteDog(id).subscribe();
     alert("Your dog has been removed to the list :(");
     // redirect to the list of dogs
-    this.router.navigate(['/admin/dogs']);
+    this.router.navigate(['/admin/dog/requests']);
   }
-
+  logout(){
+    this.session.logoutAdmin();
+    this.router.navigate(['/login'])
+  }
+  navigateToDogList(){
+    this.router.navigate(['/admin/dogs/add'])
+  }
+  navigateToRequests(){
+    this.router.navigate(['/admin/dog/requests'])
+  }
 }

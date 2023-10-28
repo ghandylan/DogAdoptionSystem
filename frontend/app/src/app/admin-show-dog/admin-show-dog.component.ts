@@ -37,5 +37,14 @@ export class AdminShowDogComponent implements OnInit {
       this.adoptions = data
     )
   }
-    
+  logout(){
+    this.session.logoutAdmin();
+    this.router.navigate(['/login'])
+  }
+  navigateToDogList(){
+    this.router.navigate(['/admin/dogs/add'])
+  }
+  navigateToRequests(){
+    this.router.navigate(['/admin/dog/requests'])
+  }
 }

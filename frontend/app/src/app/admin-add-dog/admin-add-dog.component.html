@@ -15,8 +15,8 @@
                   <a class="menu">
                     <img class="menu-title" alt = "Menu Icon" src = "assets/menu.png">
                     <ul class="menu-dropdown">
-                      <li (click)="XXXX">Dog List</li>
-                      <li (click)="XXXXX" >Requests</li>
+                      <li (click)="navigateToDogList()">Dog List</li>
+                      <li (click)="navigateToRequests()" >Requests</li>
                       <li (click)="logout()" >Log Out</li>
                     </ul>
                   </a>
@@ -61,7 +61,7 @@
             <div class="form-group">
                 <label for="dogPicture">Animal Picture:</label>
                 <input type="file" accept="image/png, image/jpeg, image/img" name="newDog.picture" class="form-control"
-                       style="width: 30px;" placeholder="Picture" (change)="onFileChange($event)" required>
+                       style="width: 250px;" placeholder="Picture" (change)="onFileChange($event)" required>
             </div>
             <div class="form-group">
                 <label for="dogHeight">Height:</label>

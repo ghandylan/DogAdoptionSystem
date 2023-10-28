@@ -24,7 +24,7 @@ const routes: Routes = [
 
   //admin
   { path:'admin/dogs', component: AdminShowDogsComponent},
-  { path:'admin/dog', component: AdminShowDogComponent},
+  { path:'admin/dog/requests', component: AdminShowDogComponent},
   { path: 'admindatabase', component: AdminDatabaseComponent},
   { path: 'admin/dogs/edit/:id', component: AdminEditDogComponent},
   { path: 'admin/dogs/add', component: AdminAddDogComponent}
