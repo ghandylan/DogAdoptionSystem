@@ -10,7 +10,7 @@ export class DogService {
   appUrl: string;
 
   constructor(private http: HttpClient) {
-    this.appUrl = "http://localhost:8080"
+    this.appUrl = "http://localhost:18080"
   }
 
   public getDogs() : Observable<Dog[]> {
@@ -23,7 +23,6 @@ export class DogService {
 
   public createDog(formData:FormData): Observable<any> {
     // Create a FormData object
-
     return this.http.post<Dog>(this.appUrl + "/dog", formData);
   }
 
