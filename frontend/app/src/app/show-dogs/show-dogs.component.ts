@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Dog} from "../models/dog";
 import {DogService} from "../services/dog.service";
 import {Router} from "@angular/router";
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-show-dogs',
@@ -11,17 +12,18 @@ import {Router} from "@angular/router";
 export class ShowDogsComponent implements OnInit {
   dogs: Dog[] = [];
 
-  constructor(private dogService: DogService, private router: Router) {
+  constructor(private dogService: DogService, private router: Router, private userService: UserService) {
 
   }
 
   ngOnInit(): void {
-    console.log("before dog fetch");
+    if(this.userService.getUserLoggedIn().email === ''){
+      this.router.navigate(['/login']);
+    }
     this.dogService.getDogs().subscribe((data: Dog[]) => {
       console.log("data: " + data);
       this.dogs = data;
     });
-    console.log("after dog fetch");
   }
 
   redirectToProfile() {

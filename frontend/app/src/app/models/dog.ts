@@ -1,6 +1,6 @@
 export class Dog {
   id:number = 0;
-  picture:string = "";
+  picture: String = '';
   name:string = "";
   age:number = 0;
   dateOfBirth: String ='';

@@ -4,7 +4,7 @@ import { UserService } from '../services/user.service';
 import { VetService } from '../services/vet.service';
 import { User } from '../models/user';
 import { Vet } from '../models/vet';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -26,22 +26,27 @@ export class LoginComponent {
   
   async onSubmit() {
     if(this.username.toString().match("@")){
-      this.user = await firstValueFrom(this.userService.loginUser(this.username, this.password))
-      if(this.user.email !== null){
-        this.router.navigate(['/dogs']);
-      }else {
+      this.user = await lastValueFrom(this.userService.loginUser(this.username, this.password))
+      console.log("vevt username '" + this.user.email + "'");
+      if(this.user.email === null){
         alert("Credentials are incorrect!");
         this.username = "";
         this.password = "";
+
+      }else {
+        this.userService.setUserLoggedIn(this.user);
+        this.router.navigate(['/dogs']);
       }
     }else {
-      this.vet = await firstValueFrom(this.vetService.findVetByUsername(this.username, this.password))
-      if(this.vet.username !== null){
-        this.router.navigate(['/admin/dogs']);
-      }else {
+      this.vet = await lastValueFrom(this.vetService.findVetByUsername(this.username, this.password))
+      console.log("vet username '" + this.vet.username + "'");
+      if(this.vet.username === null){
         alert("Credentials are incorrect!");
         this.username = "";
         this.password = "";
+      }else {
+        this.vetService.setUserLoggedIn(this.vet);
+        this.router.navigate(['/admindatabase']);
       }
     }
   }
