@@ -26,6 +26,9 @@
                     <span class="bar"></span>
                     <label>Address</label>
                 </div>
+                <div class = "back">
+                    <button class = "backbtn vw50" (click)="redirectToLogin()">Cancel</button>
+                </div>
             </div>
             <div class="col">
                 <div class="minput">
@@ -43,7 +46,7 @@
                 <div class="minput">
                     <input type="password" [(ngModel)]="password" id="password" name="password" required>
                     <span class="bar"></span>
-                    <label>Passwrod</label>
+                    <label>Password</label>
                 </div>
 
                 <div class="minput">
@@ -55,7 +58,6 @@
                 <div class="minput">
                     <div class = "centeredflex vw100">
                         <input type="button" class = "submitbtn vw50" (click)="onSubmit()" id="send" value="Submit">
-                        <button class = "backbtn vw50" (click)="redirectToLogin()">Cancel</button>
                     </div>
                 </div>
             </div>
