@@ -19,7 +19,7 @@ export class AdminAddDogComponent {
 
   constructor(private router:Router,private dogservice: DogService,private vetService: VetService,private session: AdminSessionServiceService){
   }
-  
+
   ngOnInit(): void {
     // if(this.session.getAccess() === ""){
     //   this.router.navigate(['/login']);
@@ -40,6 +40,7 @@ export class AdminAddDogComponent {
     this.formData.append('medicalConditions', this.newDog.medicalConditions);
 
     console.log(this.formData)
+      window.location.reload();
 
     // set response type to form data
 
@@ -66,9 +67,9 @@ export class AdminAddDogComponent {
   }
 
   deleteDog(id: Number){
-    alert("dog id is " + id)
-    this.dogservice.deleteDog(id);
+    this.dogservice.deleteDog(id).subscribe();
     alert("Your dog has been removed to the list :(");
+    window.location.reload();
   }
 
 }
