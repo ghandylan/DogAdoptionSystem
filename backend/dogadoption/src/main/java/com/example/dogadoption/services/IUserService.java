@@ -62,18 +62,12 @@ public class IUserService implements UserService {
     }
 
     // checking password
-    public boolean isPasswordCorrect(String username, String enteredPassword) {
-        // Retrieve the user by username or email
-        User user = this.findUserById(username).orElse(null);
-
-        if (user == null) {
-            // User not found, handle the case accordingly
-            return false;
-        }
+    @Override
+    public boolean isPasswordCorrect(String userPassword, String enteredPassword) {
 
         // Use BCryptPasswordEncoder to verify the entered password
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        return passwordEncoder.matches(enteredPassword, user.getPassword());
+        return passwordEncoder.matches(enteredPassword, userPassword);
     }
 
 }

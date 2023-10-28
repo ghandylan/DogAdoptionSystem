@@ -27,6 +27,15 @@ export class ShowDogsComponent implements OnInit {
     });
   }
 
+  logout(){
+    this.session.logoutAdmin();
+    this.router.navigate(['/login'])
+  }
+
+  redirectToAlldogs(){
+    this.router.navigate(['/dogs'])
+  }
+
   redirectToProfile() {
     this.router.navigate(['/profile'])
   }

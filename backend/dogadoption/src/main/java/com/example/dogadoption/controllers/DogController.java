@@ -40,14 +40,11 @@ public class DogController {
             dog.setPictureName(pictureName);
             dog.setPictureType(pictureType);
             dog.setPicture(fileContent);
-
             dogService.addDog(dog);
-
-
-            return "Dog saved successfully";
         } catch (Exception e) {
-            return "Dog not saved";
+            return "Dog not saved\n" + e;
         }
+        return "";
     }
 
     @PostMapping("/dog/update/{id}")

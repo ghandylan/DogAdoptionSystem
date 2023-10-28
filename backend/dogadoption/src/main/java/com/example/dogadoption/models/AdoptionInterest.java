@@ -10,20 +10,20 @@ public class AdoptionInterest {
     private long id;
 
     // TODO: Determine relationship between AdoptionInterest, User, and Dog models
-    private String name;
+    private String userName;
     private String dogName;
     private String dateAndTimeCreated;
-    private String status;
+    private String adoptionStatus;
 
     public AdoptionInterest() {
     }
 
-    public AdoptionInterest(long id, String name, String dogName, String dateAndTimeCreated, String status) {
+    public AdoptionInterest(long id, String userName, String dogName, String dateAndTimeCreated, String adoptionStatus) {
         this.id = id;
-        this.name = name;
+        this.userName = userName;
         this.dogName = dogName;
         this.dateAndTimeCreated = dateAndTimeCreated;
-        this.status = status;
+        this.adoptionStatus = adoptionStatus;
     }
 
     public long getId() {
@@ -35,11 +35,11 @@ public class AdoptionInterest {
     }
 
     public String getName() {
-        return name;
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String userName) {
+        this.userName = userName;
     }
 
     public String getDogName() {
@@ -59,11 +59,11 @@ public class AdoptionInterest {
     }
 
     public String getStatus() {
-        return status;
+        return adoptionStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStatus(String adoptionStatus) {
+        this.adoptionStatus = adoptionStatus;
     }
 
     @Override
@@ -83,10 +83,10 @@ public class AdoptionInterest {
     public String toString() {
         return "AdoptionInterest{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + userName + '\'' +
                 ", dogName='" + dogName + '\'' +
                 ", dateAndTimeCreated='" + dateAndTimeCreated + '\'' +
-                ", status='" + status + '\'' +
+                ", adoptionStatus='" + adoptionStatus + '\'' +
                 '}';
     }
 }
