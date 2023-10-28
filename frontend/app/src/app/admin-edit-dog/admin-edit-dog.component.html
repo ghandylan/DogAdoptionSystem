@@ -41,7 +41,7 @@
 		<label for="dogName">Medical Condition:</label>
           <input [(ngModel)]="selectedDog.medicalConditions" name="selectedDog.medicalConditions" class="form-control" placeholder="Medical Conditions" required>
         </div>
-        <button type="submit" (click)="onSubmit('edit')" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">Update</button>
       </form>
     </div>
 
@@ -52,14 +52,14 @@
         <thead>
           <tr>
             <th>Name</th>
-			<th>Date Of Birth</th>
-			<th>Gender</th>
+            <th>Date Of Birth</th>
+            <th>Gender</th>
             <th>Age</th>
             <th>Breed</th>
             <th>Picture</th>
             <th>Height</th>
             <th>Weight</th>
-			<th>Medical Conditions</th>
+			      <th>Medical Conditions</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -75,8 +75,8 @@
             <td>{{dog.weight}}</td>
 			<td>{{dog.medicalConditions}}</td>
             <td>
-              <button class="btn btn-sm btn-info" type="submit" (click)="editIndexValue(dog.id)">Edit</button>
-              <button class="btn btn-sm btn-danger" type="submit" (click)="deleteIndexValue(dog.id)">Delete</button>
+              <button class="btn btn-sm btn-info" type="submit">Edit</button>
+              <button class="btn btn-sm btn-danger" type="submit">Delete</button>
             </td>
           </tr>
         </tbody>
