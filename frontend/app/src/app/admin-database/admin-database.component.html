@@ -8,7 +8,7 @@
     <!-- Add New Dog Section -->
     <div class="add-dog-section">
       <h3>Add New Dog</h3>
-      <form (ngSubmit)="onSubmit()"  enctype="multipart/form-data">
+      <form (ngSubmit)="onSubmit('add')"  enctype="multipart/form-data">
         <div class="form-group">
           <label for="dogName">Name:</label>
           <input [(ngModel)]="newDog.name" name="newDog.name" class="form-control" required>
@@ -51,7 +51,7 @@
           <label for="dogMedicalConditions">Medical Conditions:</label>
           <input [(ngModel)]="newDog.medicalConditions" name="newDog.medicalConditions" class="form-control">
         </div>
-        <button type="button" (click)="onSubmit()" class="btn btn-primary">Add</button>
+        <button type="button" (click)="onSubmit('add')" class="btn btn-primary">Add</button>
       </form>
     </div>
 
@@ -128,7 +128,7 @@
 		<label for="dogName">Medical Condition:</label>
           <input [(ngModel)]="selectedDog.medicalConditions" name="selectedDog.medicalConditions" class="form-control" placeholder="Medical Conditions" required>
         </div>
-        <button type="submit" (click)="onSubmit()" class="btn btn-primary">Update</button>
+        <button type="submit" (click)="onSubmit('edit')" class="btn btn-primary">Update</button>
       </form>
     </div>
   </div>

@@ -35,25 +35,12 @@ export class AdminDatabaseComponent implements OnInit {
     alert("Dog Deleted :(")
   }
   formData = new FormData();
-  dog: Dog = {
-    id: 0,
-    picture: null,
-    name: "",
-    age: 0, // Set a default age value
-    dateOfBirth: "",
-    gender: "",
-    breed: "",
-    height: "", // Set a default height value
-    weight: "", // Set a default weight value
-    medicalConditions: ""
-  };
+  dog: Dog = new Dog();
+  newDog: Dog = new Dog();
 
-  constructor(private router:Router,private dogservice: DogService){
-  }
-  onSubmit() {
-
-
-    // Append other form data and send the request
+  onSubmit(type: String) {
+    if (type == "add"){
+      // Append other form data and send the request
     this.formData.append('name', this.dog.name);
     this.formData.append('age', this.dog.age.toString());
     this.formData.append('dateOfBirth', this.dog.dateOfBirth);
@@ -71,6 +58,10 @@ export class AdminDatabaseComponent implements OnInit {
           console.error('Dog not saved', error);
         }
     );
+    }else {
+      //update dog
+    }
+
   }
 
   onFileChange(event: Event) {
@@ -81,8 +72,3 @@ export class AdminDatabaseComponent implements OnInit {
     }
   }
 }
-  onSubmit(){
-      this.dogservice.createDog(this.newDog);
-
-    console.log(this.newDog);
-  }}
