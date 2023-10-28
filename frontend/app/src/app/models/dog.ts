@@ -6,7 +6,7 @@ export class Dog {
   dateOfBirth: string = '';
   gender: string = "";
   breed: string = "";
-  height: string = ""; // Set a default value here
-  weight: string = ""; // Set a default value here
+  height: String = ""; // Set a default value here
+  weight: String = ""; // Set a default value here
   medicalConditions: string = "";
 }
