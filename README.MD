@@ -5,3 +5,5 @@
 - Tayag, Dylan Louis - Backend
 - Tolentino, Jairus Lester - Backend
 - Visperas, Harold Russell - Frontend
+
+***Each contributor played a crucial role in the development of the system, bringing their unique skills and expertise to the project.***
